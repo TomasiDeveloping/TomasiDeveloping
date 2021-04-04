@@ -11,6 +11,9 @@ import {AppRoutingModule} from './app-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import {NgxNavbarModule} from 'ngx-bootstrap-navbar';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FooterComponent } from './footer/footer.component';
+import { ImpressumComponent } from './footer/impressum/impressum.component';
+import { PrivacyComponent } from './footer/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AboutComponent,
     NotFoundComponent,
     NavigationComponent,
+    FooterComponent,
+    ImpressumComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
