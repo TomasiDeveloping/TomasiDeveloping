@@ -7,6 +7,9 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {AppRoutingModule} from './app-routing.module';
+import { NavigationComponent } from './navigation/navigation.component';
+import {NgxNavbarModule} from 'ngx-bootstrap-navbar';
 
 @NgModule({
   declarations: [
@@ -15,10 +18,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ContactComponent,
     ProjectsComponent,
     AboutComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavigationComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    NgxNavbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
