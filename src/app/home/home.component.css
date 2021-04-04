@@ -1,0 +1,10 @@
+.header{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5%;
+}
+.banner{
+  font-family: 'Metal Mania', cursive;
+  font-size: 6vw;
+  align-self: center;
+}

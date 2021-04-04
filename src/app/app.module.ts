@@ -10,6 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {AppRoutingModule} from './app-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import {NgxNavbarModule} from 'ngx-bootstrap-navbar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {NgxNavbarModule} from 'ngx-bootstrap-navbar';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgxNavbarModule
   ],
