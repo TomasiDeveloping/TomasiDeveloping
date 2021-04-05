@@ -1,6 +1,22 @@
 .container{
   margin-top: 5%;
 }
-h3 {
+h3{
   font-family: 'Metal Mania', cursive;
+}
+h5{
+  padding-left: 0;
+  font-family: 'Metal Mania', cursive;
+  color: gold;
+}
+.title {
+  color: red;
+  font-weight: bold;
+}
+li{
+  font-style: italic;
+  margin-left: 20px;
+}
+.company {
+  font-weight: bold;
 }
