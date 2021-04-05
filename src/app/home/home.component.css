@@ -8,3 +8,17 @@
   font-size: 6vw;
   align-self: center;
 }
+.content{
+  margin-top: 50px;
+}
+.card-img{
+  width: 100%!important;
+  height: 200px!important;
+  object-fit: cover;
+}
+h4{
+  text-align: center;
+}
+.card-title {
+  font-family: 'Metal Mania', cursive;
+}
