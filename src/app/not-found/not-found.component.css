@@ -1,4 +1,15 @@
 .container{
+  margin-top: 5%;
   display: flex;
   justify-content: space-between;
+}
+li:hover {
+  cursor: pointer;
+  color: red;
+}
+@media screen and (max-width: 500px) {
+  .container {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
 }

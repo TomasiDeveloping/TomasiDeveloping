@@ -1,7 +1,7 @@
 <div class="container">
   <div class="content">
     <h1>Oops!</h1>
-    <h3>Wir können die Seite, die Sie suchen, nicht finden.</h3>
+    <h3>Wir können die Seite, die Sie suchen <code>"{{searchUrl}}"</code>, nicht finden.</h3>
     <br>
     <code>Error 404</code>
     <br>
@@ -9,12 +9,12 @@
     <p>Hier sind stattdessen einige hilfreiche Links:</p>
     <ul>
       <li routerLink="/home">Home</li>
-      <li>Über mich</li>
-      <li>Projekte</li>
-      <li>Kontakt</li>
+      <li routerLink="/about">Über mich</li>
+      <li routerLink="/projects">Projekte</li>
+      <li routerLink="/contact">Kontakt</li>
     </ul>
   </div>
   <div class="image">
-    <img src="./assets/images/notFound.jpg" class="img-fluid" alt="Logo" width="80%">
+    <img src="./assets/images/notFound.jpg" class="img-thumbnail" alt="Logo">
   </div>
 </div>
