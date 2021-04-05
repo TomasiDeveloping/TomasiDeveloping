@@ -1,1 +1,103 @@
-<p>coming soon ...</p>
+<div class="container">
+  <h3>Kontaktformular:</h3>
+  <br>
+  <h5>Ich freue mich von Ihnen zu hören</h5>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="firstName">Vorname</label>
+        <input
+          id="firstName"
+          type="text"
+          class="form-control"
+          [ngClass]="{
+                'is-invalid': contactForm.controls.firstName.invalid &&
+                (contactForm.controls.firstName.dirty || contactForm.controls.firstName.touched),
+                'is-valid': contactForm.controls.firstName.valid
+              }"
+          formControlName="firstName">
+        <div class="invalid-feedback"
+             *ngIf="contactForm.controls.firstName.errors &&
+                 (contactForm.controls.firstName.dirty || contactForm.controls.firstName.touched)">
+          <p *ngIf="contactForm.controls.firstName.errors.required">Vorname ist ein Pflichtfeld</p>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="lastName">Nachname</label>
+        <input
+          id="lastName"
+          type="text"
+          class="form-control"
+          [ngClass]="{
+                'is-invalid': contactForm.controls.lastName.invalid &&
+                (contactForm.controls.lastName.dirty || contactForm.controls.lastName.touched),
+                'is-valid': contactForm.controls.lastName.valid
+              }"
+          formControlName="lastName">
+        <div class="invalid-feedback"
+             *ngIf="contactForm.controls.lastName.errors &&
+                 (contactForm.controls.lastName.dirty || contactForm.controls.lastName.touched)">
+          <p *ngIf="contactForm.controls.lastName.errors.required">Nachname ist ein Pflichtfeld</p>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input
+        id="email"
+        class="form-control"
+        [ngClass]="{
+        'is-invalid': contactForm.controls.email.invalid &&
+        (contactForm.controls.email.dirty || contactForm.controls.email.touched),
+        'is-valid': contactForm.controls.email.valid
+        }"
+        formControlName="email">
+      <div class="invalid-feedback"
+           *ngIf="contactForm.controls.email.errors &&
+           (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
+        <p *ngIf="contactForm.controls.email.errors.required">E-Mail ist ein Pflichtfeld</p>
+        <p *ngIf="contactForm.controls.email.errors.pattern">Ungültige E-Mail</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="subject">Kontaktgrund</label>
+      <input
+        id="subject"
+        class="form-control"
+        [ngClass]="{
+        'is-invalid': contactForm.controls.subject.invalid &&
+        (contactForm.controls.subject.dirty || contactForm.controls.subject.touched),
+        'is-valid': contactForm.controls.subject.valid
+        }"
+        formControlName="subject">
+      <div class="invalid-feedback"
+           *ngIf="contactForm.controls.subject.errors &&
+           (contactForm.controls.subject.dirty || contactForm.controls.subject.touched)">
+        <p *ngIf="contactForm.controls.subject.errors.required">Kontaktgrund ist ein Pflichtfeld</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="message">Nachricht</label>
+      <textarea
+        class="form-control"
+        [ngClass]="{
+        'is-invalid': contactForm.controls.message.invalid &&
+        (contactForm.controls.message.dirty || contactForm.controls.message.touched),
+        'is-valid': contactForm.controls.message.valid
+        }"
+        id="message"
+        formControlName="message">
+      </textarea>
+      <div class="invalid-feedback"
+           *ngIf="contactForm.controls.message.errors &&
+           (contactForm.controls.message.dirty || contactForm.controls.message.touched)">
+        <p *ngIf="contactForm.controls.message.errors.required">Nachricht ist ein Pflichtfeld</p>
+      </div>
+    </div>
+    <div class="button">
+      <button [disabled]="contactForm.invalid || !contactForm.dirty" class="btn btn-success" type="submit">Absenden
+      </button>
+    </div>
+
+  </form>
+</div>

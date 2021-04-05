@@ -14,6 +14,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
 import { ImpressumComponent } from './footer/impressum/impressum.component';
 import { PrivacyComponent } from './footer/privacy/privacy.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {NgxSpinnerModule} from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -28,12 +31,15 @@ import { PrivacyComponent } from './footer/privacy/privacy.component';
     ImpressumComponent,
     PrivacyComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    NgxNavbarModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        NgxNavbarModule,
+        ReactiveFormsModule,
+      HttpClientModule,
+      NgxSpinnerModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
