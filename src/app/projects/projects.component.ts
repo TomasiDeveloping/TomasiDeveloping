@@ -12,4 +12,7 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(): void {
+    window.open('https://github.com/TomasiDeveloping', '_blank');
+  }
 }

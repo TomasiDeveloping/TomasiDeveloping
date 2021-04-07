@@ -17,6 +17,12 @@ import { PrivacyComponent } from './footer/privacy/privacy.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {NgxSpinnerModule} from 'ngx-spinner';
+import { GlasblaesereiComponent } from './projects/glasblaeserei/glasblaeserei.component';
+import { GamingfactoryComponent } from './projects/gamingfactory/gamingfactory.component';
+import { FelchenAppComponent } from './projects/felchen-app/felchen-app.component';
+import { GameInventoryComponent } from './projects/game-inventory/game-inventory.component';
+import { FishingLizenzManagerComponent } from './projects/fishing-lizenz-manager/fishing-lizenz-manager.component';
+import { TomasiDevelopingComponent } from './projects/tomasi-developing/tomasi-developing.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +36,12 @@ import {NgxSpinnerModule} from 'ngx-spinner';
     FooterComponent,
     ImpressumComponent,
     PrivacyComponent,
+    GlasblaesereiComponent,
+    GamingfactoryComponent,
+    FelchenAppComponent,
+    GameInventoryComponent,
+    FishingLizenzManagerComponent,
+    TomasiDevelopingComponent,
   ],
     imports: [
         BrowserModule,
