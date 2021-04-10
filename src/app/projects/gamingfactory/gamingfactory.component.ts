@@ -12,4 +12,7 @@ export class GamingfactoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(): void {
+    window.open('https://gamingfactory.ch/home', '_blank');
+  }
 }

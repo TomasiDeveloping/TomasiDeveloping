@@ -25,6 +25,7 @@ import { FishingLizenzManagerComponent } from './projects/fishing-lizenz-manager
 import { TomasiDevelopingComponent } from './projects/tomasi-developing/tomasi-developing.component';
 import {QRCodeModule} from 'angular2-qrcode';
 import { LightboxModule } from 'ngx-lightbox';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 
 
@@ -57,7 +58,8 @@ import { LightboxModule } from 'ngx-lightbox';
       HttpClientModule,
       NgxSpinnerModule,
       QRCodeModule,
-      LightboxModule
+      LightboxModule,
+      NgxScrollTopModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,3 +5,19 @@
 h3{
   font-family: 'Metal Mania', cursive;
 }
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.buttonContainer > button {
+  width: 60%;
+}
+@media screen and (max-width: 500px) {
+  .buttonContainer {
+    display: block;
+  }
+  .buttonContainer > button {
+    width: 100%;
+  }
+}
