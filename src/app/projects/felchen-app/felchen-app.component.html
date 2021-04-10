@@ -1,5 +1,116 @@
 <div class="container">
   <h3>Felchen App</h3>
-  <p>Coming soon . . .</p>
+  <p>Die Fischerei auf Felchen ist eine Grosse Wissenschaft, ich kenne viele Fischerkollegen/Innen
+    die beim Angeln auf Felchen sich diverse Notizen machen wie z.B. Haken Grösse,
+    Temperatur, Wassertemperatur, Nymphen Farbe, Wetter usw.</p>
+  <p>Die Idee zum Projekt entstand in meiner Ausbildung zum Applikationsentwickler.</p>
+  <p>Unsere Aufgabe war es eine Mobil App zu Entwickeln mit ReactNative.</p>
+  <p>In der Schule hatten wir nicht sehr viel Zeit für dieses Projekt, dennoch wurde das Projekt fertig
+    und ich war ziemlich zufrieden. Was mich aber störte war das für das Backend der Applikation Firebase
+    eingesetzt wurde. Zudem war die App eigentlich für mich, also eine Person.</p>
+  <p>Nach meiner Ausbildung hat mich das Projekt nochmals gepackt und ich habe die komplette App mit Ionic
+    umgeschrieben, eine eigenes Backend programmiert sowie eine Login Funktion implementiert.</p>
+  <hr>
+  <h4>Beschreibung:</h4>
+  <p>Mit dieser App sollen gefangene Felchen gespeichert werden.</p>
+  <p>Die Felchen Fischerei ist eine Grosse Wissenschaft. Es wird mit diversen Nymphen geangelt,
+    diese unterscheiden sich in Farbe, Hacken Grösse und anderen Merkmalen.</p>
+  <p>Mit der App sollen all diese Eigenschaften gespeichert werden, um auf die Daten der Fänge zurück greifen zu
+    können.</p>
+  <hr>
+  <h4>Funktionen:</h4>
+
+  <div class="screens">
+    <img src="../../../assets/images/felchenApp/statistikScreen.jpg"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(0)">
+    <div class="text">
+      <p>Wird die App gestartet und hat man sich mit seiner E-Mail Adresse
+        und Passwort erfolgreich angemeldet kommt man auf den Statistik Screen</p>
+      <p>Im Screen werden alle Fänge, die man gespeichert hat nach Datum geladen</p>
+      <p>Mit Klick auf Details zum Fang gelangt man zum Detail Screen mit allen gespeicherten Daten des Fanges</p>
+    </div>
+  </div>
+
+  <div class="screens">
+    <img src="../../../assets/images/felchenApp/DetailScreen.jpg"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(1)">
+    <div class="text">
+      <p>Im Detail Screen sieht der Benutzer alle Details, die zum Fang gespeichert wurden.</p>
+      <p>Der Benutzer kann hier auch einen Fang wieder löschen</p>
+    </div>
+  </div>
+
+  <div class="screens">
+    <img src="../../../assets/images/felchenApp/AddCatchScreen.jpg"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(2)">
+    <div class="text">
+      <p>Klick der Benutzer in der Statistik auf Fang hinzufügen wird ein neuer Screen geöffnet, um einen neuen Fang einzutragen</p>
+      <p>Der Benutzer kann hier die gewünschten Daten eintragen. Die Wetterdaten werden automatisch über eine API abgefragt</p>
+      <p>Die Wetterdaten können auch manuell noch angepasst werden.</p>
+    </div>
+  </div>
+
+  <div class="screens">
+    <img src="../../../assets/images/felchenApp/WetterScreen.jpg"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(3)">
+    <div class="text">
+      <p>Das Wetter lässt sich über den Tab Wetter laden. Der Benutzer kann die Wetterdaten automatisch per GPS laden oder per PLZ oder Ort</p>
+      <p>Die Wetterdaten werden direkt über eine API angefragt und verarbeitet</p>
+      <p>Die Hintergründe wechseln sich je nach Wetter oder Urzeit</p>
+    </div>
+  </div>
+
+  <div>
+    <p>Im Tab Einstellungen kann der Benutzer seine Angaben wie Name oder E-Mail-Adresse ändern</p>
+    <p>Es besteht die Möglichkeit sich auszuloggen, das Passwort zu ändern oder den Account komplett zu löschen</p>
+  </div>
+<hr>
+  <h4>Vorgesehene Features:</h4>
+  <p>Bei Gelegenheit und genügend User, welche die App benützen sind folgende Features noch vorgesehen:</p>
+  <ul>
+    <li>Öffentliche Fänge anderer User der App</li>
+    <li>Fang bearbeiten</li>
+    <li>Fänge sortieren</li>
+  </ul>
+
+  <hr>
+  <h4>Verwendete Technologien:</h4>
+  <ul>
+    <li>Ionic</li>
+    <li>ASP.NET</li>
+    <li>MSSQL</li>
+  </ul>
+
+  <hr>
+  <h4>Umsetzung:</h4>
+  <p>Die App wurde mit Ionic programmiert.</p>
+  <p>Für das Backend wurde eine RESTFull API in ASP.NET in C# programmiert</p>
+  <p>Die App kommuniziert über das HTTP Protokoll mit der RESTFull API</p>
+  <p>Als Datenbank wurde eine Microsoft SQL-Datenbank eingesetzt</p>
+
+  <div class="d-grid gap-2 mt-4">
+    <button class="btn btn-success mb-4" (click)="showDownload = !showDownload">App im PlayStore herunterladen</button>
+  </div>
+
+  <ng-container *ngIf="showDownload">
+    <div class="download">
+      <div>
+        <qr-code [value]="'https://play.google.com/store/apps/details?id=ch.tomasi.felche'" [size]="200"></qr-code>
+      </div>
+      <div>
+        <img id="playLogo" src="assets/images/play-store-logo-33884.png" alt="playStoreLogo" class="img-thumbnail"
+             (click)="onPlayStore()">
+      </div>
+    </div>
+  </ng-container>
 </div>
+
 

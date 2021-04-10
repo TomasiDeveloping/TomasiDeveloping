@@ -5,3 +5,57 @@
 h3{
   font-family: 'Metal Mania', cursive;
 }
+.download {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#playLogo:hover {
+  cursor: pointer;
+}
+
+.download{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.images {
+  width: 200px;
+  height: auto;
+}
+img:hover{
+  cursor: pointer;
+}
+.screens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.text{
+  align-self: center;
+  justify-content: end;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 500px) {
+  .text {
+    width: 100%;
+  }
+  .images {
+    width: 100px;
+    height: auto;
+  }
+  #playLogo {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .images {
+    width: 250px;
+    height: auto;
+  }
+}

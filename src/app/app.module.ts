@@ -23,6 +23,11 @@ import { FelchenAppComponent } from './projects/felchen-app/felchen-app.componen
 import { GameInventoryComponent } from './projects/game-inventory/game-inventory.component';
 import { FishingLizenzManagerComponent } from './projects/fishing-lizenz-manager/fishing-lizenz-manager.component';
 import { TomasiDevelopingComponent } from './projects/tomasi-developing/tomasi-developing.component';
+import {QRCodeModule} from 'angular2-qrcode';
+import { LightboxModule } from 'ngx-lightbox';
+
+
+
 
 @NgModule({
   declarations: [
@@ -50,7 +55,9 @@ import { TomasiDevelopingComponent } from './projects/tomasi-developing/tomasi-d
         NgxNavbarModule,
         ReactiveFormsModule,
       HttpClientModule,
-      NgxSpinnerModule
+      NgxSpinnerModule,
+      QRCodeModule,
+      LightboxModule
     ],
   providers: [],
   bootstrap: [AppComponent]
