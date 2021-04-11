@@ -1,5 +1,222 @@
 <div class="container">
   <h3>Fischer-Lizenz Manager</h3>
-  <p>Coming soon . . .</p>
+  <p>Mit dem Fischer Lizenz Manager soll ein Fischerverein seine Lizenzen (Fischereikarten) Online
+    verwalten können</p>
+  <p>Mit dem Manager lassen sich Mitglieder erfassen, neue Lizenzen erfassen und die Fangstatistik
+    Online führen.</p>
+  <p>Zudem können diverse Excels generiert werden z.B. von den Mitgliedern, allen Lizenzen sowie eine
+    Jahres Fangstatistik</p>
+  <hr>
+  <h4>Beschreibung:</h4>
+  <p>Die Applikation lässt sich an den jeweiligen Fischerverein anpassen.</p>
+  <p>Es gibt eine Startseite mit Informationen über den Eingeloggten User, die Fischerverein Adresse,
+    Schonzeiten und Mindestmasse der Fische sowie Fischereivorschriften</p>
+  <p>In der Rubrik Lizenzen, kann der Eingeloggte User all seine Lizenzen einsehen sowie deren
+    Ablaufdatum</p>
+  <p>In der Rubrik Statistik kann der User seine Fangstatistik Online führen.</p>
+  <p>Die Rubrik Aufseher ist nur für User mit dem Recht Aufseher. Hier können die Lizenzen der Mitglieder
+    kontrolliert werden sowie deren Fangstatistiken.</p>
+  <p>Die Rubrik Admin ist nur für User mit Administrationsrechte. Hier kann ein Administrator den
+    Fischerverein verwalten, neue User und Lizenzen hinzufügen.</p>
+  <hr>
+  <h4>Funktionen:</h4>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/schonzeit.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(0)">
+    <div class="text">
+      <p>In der Rubrik Fische und Schonzeiten können beliebig viele Einträge erfasst werden.</p>
+      <p>Jeder Fisch, der erfasst wird, hat einen Namen, eine Mindestmass, und eine Schonzeit. Es können bei
+        Mindestmass und Schonzeit auch keine Eingetragen werden, falls diese Fischart dies nicht besitzt.</p>
+      <p>Anhand dieser Einträge werden auf der Startseite alle Fische und deren Schonzeiten angezeigt.
+        Zudem werden auch all diese Fischarten bei einem neuen Statistik Eintrag automatisch zur Auswahl
+        stehen</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/regel.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(1)">
+    <div class="text">
+      <p>In der Rubrik Regeln und Vorschriften können eigne Regeln erfasst werden, welche auch direkt auf
+        der Startseite angezeigt werden. Hat der Verein bereits eine Regel als PDF oder auf der Webseite
+        veröffentlicht kann auch dieser Link dort eingetragen werden.
+      </p>
+      <p>Mit Klick auf Regel hinzufügen kann eine neue Regel definiert werden.</p>
+      <p>Eine Regel kann jederzeit entfernt werden</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/adminstat.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(2)">
+    <div class="text">
+      <p>In der Rubrik Statistik werden alle Statistiken in einer Tabelle angezeigt.</p>
+      <p>Mit Klick auf das Icon in der Spalte Details kann jede Statistik im Detail betrachtet werden.</p>
+      <p>In der Detail Ansicht kann jeder Monat und jeder Tag der Statistik einzeln betrachtet werden.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/jahres.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(3)">
+    <div class="text">
+      <p>Mit Klick auf das Eingabefeld bei Jahresstatistik erstellen erhält man automatisch eine Auswahl der
+        letzten 5 Jahre.</p>
+      <p>Mit klick auf Excel erstellen wird das Excel automatisch für das gewünschte Jahr erstellt und
+        heruntergeladen.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/karte.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(4)">
+    <div class="text">
+      <p>In der Rubrik Lizenzen hat ein Administrator eine Übersicht über alle ausgestellten Lizenzen sortiert
+        nach Jahr und Ablauf der Lizenz.</p>
+      <p>Mit Doppelklick auf eine gewünschte Lizenz kann diese bearbeitet werden.</p>
+      <p>Eine Lizenz kann auch jederzeit über den Button in der Tabelle löschen gelöscht werden.</p>
+      <p>Mit Klick auf Lizenz hinzufügen kann der Administrator eine neue Lizenz für ein User ausstellen.</p>
+      <p>Alle registrierten User stehen automatisch zur Auswahl, es wird auch direkt eine neue Statistik
+        erstellt für die neue Lizenz.</p>
+      <p>Mit Klick auf Excel Export in der Tabelle wird automatisch ein Excel heruntergeladen mit allen
+        erstellten Lizenzen.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/user.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(5)">
+    <div class="text">
+      <p>In der Rubrik Users hat ein Administrator überblick über alle Registrierten Benutzer der Plattform.</p>
+      <p>In der Tabelle findet er alle Angaben zu dem Benutzer inklusive Adresse im Untermenu der Tabelle.</p>
+      <p>Mit Doppelklick auf einen User kann der gewünschte User bearbeitet werden.</p>
+      <p>Alle Daten des Users können angepasst werden. Wird der User auf Inaktiv gesetzt ist dieser von der
+        Plattform gesperrt und kann sich danach nicht mehr Einloggen.</p>
+      <p>Mit Benutzer hinzufügen kann der Administrator einen neuen Benutzer erstellen. Nur ein
+        Administrator kann einen neuen Benutzer erstellen und auch die Rechte auf der Plattform vergeben.</p>
+      <p>Mit Klick auf Excel Export lässt sich ein Excel herunterladen mit allen Benutzern und deren Adresse.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/useraufseher.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(6)">
+    <div class="text">
+      <p>Die Rubrik Aufseher kann jeder Administrator auch einsehen oder alle Benutzer, welche das Recht
+        Aufseher zugeteilt wurde.</p>
+      <p>Ein Aufseher kann mit klick in das Feld Users einen bestimmten Benutzer suchen, welcher kontrolliert
+        werden soll.</p>
+      <p>Es werden alle möglichen Benutzer der Plattform in einem Dropdown Menu angezeigt. Der Aufseher
+        kann auch einfach einen Benutzer mit Eingabe des Namens suchen und alle Benutzer werden
+        automatisch gefiltert.</p>
+      <p>Ist ein Benutzer gefunden und ausgewählt werden dem Aufseher nun alle Details des Benutzers
+        angezeigt mit Adresse und einem Bild.</p>
+      <p>Dem Aufseher werden nur Aktuelle Lizenzen des jeweiligen Jahres angezeigt.
+        Ältere Lizenzen werden hier nicht dargestellt</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/aufseherst.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(7)">
+    <div class="text">
+      <p>Mit Klick auf das Detail Icon in der Tabellenspalte Statistik wird für die gewünschte Lizenz die Statistik
+        angezeigt.</p>
+      <p>Mit Klick auf Aktueller Tageseintrag wird die aktuelle Statistik mit Fang, Anzahl und ausgeübte
+        Stunden für den aktuellen Tag angezeigt, sofern ein Eintrag vorhanden ist.</p>
+      <p>Ansonsten wird eine Warnmeldung angezeigt damit der Aufseher sofort sieht das kein aktueller
+        Eintrag vorhanden ist.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/userStat.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(8)">
+    <div class="text">
+      <p>In dieser Rubrik sieht der Benutzer all seine Statistiken zu den Lizenzen, welche er besitzt.</p>
+      <p>Mit Klick auf die Lizenz kann der Benutzer all seine Einträge in der Statistik ansehen.</p>
+      <p>Die Einträge können nicht bearbeitet werden damit eine Manipulation der Fangstatistik nicht möglich
+        ist.
+        Mit Klick auf Neuer Eintrag kann der Benutzer einen aktuellen Tageseintrag in die Statistik eintragen.</p>
+      <p>Der Tag und Monat können nicht bearbeitet werden, da nur ein aktueller Tageseintrag in die Statistik
+        möglich ist.
+        Mit Klick auf Fang hinzufügen kann der Benutzer eine Fischart und Anzahl Eintragen.</p>
+      <p>Unter Fischart stehen alle Fischarten zur Verfügung, welche der Verein erfasst hat.
+        Wurde eine Fischart gefangen, welche nicht auf der Liste stehen kann, der Benutzer „Andere“
+        auswählen und muss diese dann in einer neuen Spalte Eintragen.
+        Die Fischart wird nicht in Liste übernommen aber in der Statistik eingetragen.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/neu.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(9)">
+    <div class="text">
+      <p>Werden weitere Fische gefangen kann der aktuelle Tageseintrag jederzeit bearbeitet werden.</p>
+      <p>Es können die Stunden angepasst werden, die Anzahl gefangener Fische oder auch weitere Fänge
+        hinzugefügt werden.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/liz.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(10)">
+    <div class="text">
+      <p>In der Rubrik Lizenzen hat der Benutzer eine Übersicht über alle Lizenzen, die er verfügt.
+        Es werden alle Lizenzen des aktuellen Jahres anzeigt.</p>
+      <p>Ältere Lizenzen werden in einer separaten Sparte Alte Lizenzen angezeigt.
+        Der Benutzer sieht all seine Lizenzen und wie lange diese noch gültig sind.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/lizenzManager/home.PNG"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(11)">
+    <div class="text">
+      <p>Die Home Seite ist die Startseite der Plattform.
+        Hier sieht der Benutzer seine Adresse sowie die Adresse des Vereins.</p>
+      <p>Mit dem Link in der Vereinsadresse kann der User direkt auf die Homepage des Vereins wechseln,
+        sofern diese durch den Administrator hinterlegt wurde.
+        Es werden auch in einer Tabelle alle Fischarten, deren Schonzeiten und Schonmasse des Vereins
+        anteigt.</p>
+      <p>Diese Einträge werden automatisch angepasst wen ein Administrator Änderungen vornimmt.
+        Im Unteren Bereich kann der Benutzer die Vereinsvorschriften nachlesen oder auf eine Externe Seite
+        gelangen, falls diese von einem Administrator hinzugefügt wurde.</p>
+    </div>
+  </div>
+  <hr>
+  <h4>Verwendete Technologien:</h4>
+  <ul>
+    <li>Angular</li>
+    <li>Bootstrap</li>
+    <li>.NET Core 5</li>
+    <li>MSSQL</li>
+  </ul>
+  <hr>
+  <h4>Umsetzung:</h4>
+  <p>Das Frontend wurde mit Angular programmiert und Bootstrap verwendet für die Darstellung</p>
+  <p>Für das Backend wurde eine RESTFull API mit .NET Core 5 in C# programmiert. Die REST wurde komplett asynchron programmiert</p>
+  <p>Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.</p>
+  <hr>
+  <h4>Demo Version</h4>
+  <p>Um die Applikation zu Testen wurde eine Demo Version veröffentlicht.</p>
+  <p>In der Demoversion sind einige Features nicht möglich.</p>
+  <p>Mit den drei Testuser Admin, Aufseher und User kann man sich in die Applikation einloggen und die verschiedenen Rollen testen.</p>
+  <div class="demoButton">
+    <button class="btn btn-success" (click)="onDemoClick()">Demo testen</button>
+  </div>
 </div>
 

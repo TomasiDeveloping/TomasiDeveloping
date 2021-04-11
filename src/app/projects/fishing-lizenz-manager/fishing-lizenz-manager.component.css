@@ -5,3 +5,34 @@
 h3{
   font-family: 'Metal Mania', cursive;
 }
+.images {
+  width: auto;
+  height: auto;
+}
+img:hover{
+  cursor: pointer;
+}
+.screens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.text{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.demoButton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1020px) {
+  .images {
+    width: 70%;
+    height: auto;
+  }
+}
+
