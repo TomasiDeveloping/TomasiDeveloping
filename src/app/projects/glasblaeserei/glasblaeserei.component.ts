@@ -12,4 +12,7 @@ export class GlasblaesereiComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(): void {
+    window.open('https://glasblaeserei-egli.ch/Home', '_blank');
+  }
 }
