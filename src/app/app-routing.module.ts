@@ -13,6 +13,7 @@ import {FelchenAppComponent} from './projects/felchen-app/felchen-app.component'
 import {GameInventoryComponent} from './projects/game-inventory/game-inventory.component';
 import {FishingLizenzManagerComponent} from './projects/fishing-lizenz-manager/fishing-lizenz-manager.component';
 import {TomasiDevelopingComponent} from './projects/tomasi-developing/tomasi-developing.component';
+import {FelchenWebappComponent} from './projects/felchen-webapp/felchen-webapp.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'projects/gameInventory', component: GameInventoryComponent},
   {path: 'projects/fishingLizenzManager', component: FishingLizenzManagerComponent},
   {path: 'projects/tomasiDeveloping', component: TomasiDevelopingComponent},
+  {path: 'projects/felchenWebApp', component: FelchenWebappComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'impressum', component: ImpressumComponent},
   {path: 'privacy', component: PrivacyComponent},

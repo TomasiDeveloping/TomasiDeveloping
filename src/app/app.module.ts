@@ -26,6 +26,7 @@ import { TomasiDevelopingComponent } from './projects/tomasi-developing/tomasi-d
 import {QRCodeModule} from 'angular2-qrcode';
 import { LightboxModule } from 'ngx-lightbox';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { FelchenWebappComponent } from './projects/felchen-webapp/felchen-webapp.component';
 
 
 
@@ -48,6 +49,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     GameInventoryComponent,
     FishingLizenzManagerComponent,
     TomasiDevelopingComponent,
+    FelchenWebappComponent,
   ],
     imports: [
         BrowserModule,

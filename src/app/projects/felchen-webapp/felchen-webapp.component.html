@@ -1,0 +1,101 @@
+<div class="container">
+  <h3>Felchen Webapp</h3>
+  <p>Die Felchen Webapp ist eine neue Version der Android Felchen App. Die neue Version wurde komplett als Webapp programmiert,
+  die App ist eine normale Webseite und kann somit von jedem Gerät geöffnet werden, welches Internetzugang und einen Browser hat.</p>
+  <p>Der Vorteil liegt darin das die App nicht mehr nur an ein Android Gerät gebunden ist
+    und auch Updates können viel schneller veröffentlicht werden</p>
+  <p>Der Nachteil ist das eine Webseite geöffnet werden muss und nicht einfach eine App gestartet werden kann.</p>
+  <hr>
+  <h4>Funktionen:</h4>
+  <div class="screens">
+    <img src="../../../assets/images/felchenWebApp/login.jpg" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(0)">
+    <div class="text">
+      <p>Die App ist mit einem Login geschützt. Ist der User nicht eingeloggt muss er sich als erstes einloggen oder Registrieren.</p>
+      <p>Nach dem erfolgreichen Login erhält der User ein Json Web Token welches 1 Tag gültig ist. Nach Ablauf des Tokens muss sich der User
+      neu einloggen.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/felchenWebApp/home.jpg" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(1)">
+    <div class="text">
+      <p>Auf der Startseite sieht der User seine eingetragenen Fänge, die Fänge sind standartmässig nach Fangdatum sortiert.
+      Der User kann die Anzahl der Fänge pro Seite anpassen sowie nach Fangdatum sortieren.
+      Mit Klick auf Detail zum Fang, kommt man zur Detail Ansicht des Fanges mit allen gespeicherten Daten</p>
+      <p>Mit dem Tab öffentliche Fänge sieht man alle Fänge welche User als öffentlich markiert haben.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/felchenWebApp/catchDetail.jpg" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(2)">
+    <div class="text">
+      <p>Mit Klick auf Fang Detail in der Startseite, gelangt man zur Detail Ansicht des Fanges.</p>
+      <p>In der Detail Ansicht sieht der User alle Daten, welche zu diesem Fang gespeichert wurden.
+      Die Daten lassen sich alle bearbeiten.</p>
+      <p>Der Fang lässt sich auch löschen.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/felchenWebApp/editCatch.jpg" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(3)">
+    <div class="text">
+      <p>Mit Klick auf Fang bearbeiten können alle Daten, welche gespeichert wurden zu diesem Fang bearbeitet werden.</p>
+      <p>Beim Bearbeiten werden keine aktuellen Wetterdaten geladen sowie beim Hinzufügen des Fanges.
+      Alle Daten können manuell angepasst werden.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/felchenWebApp/weather.jpg" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(4)">
+    <div class="text">
+      <p>Im Menu Wetter werden dem User die aktuellen Wetterdaten für seinen Standort geladen.
+      Die Standort Abfrage muss dem Gerät erlaubt werden, ansonsten werden keine Wetterdaten geladen.</p>
+      <p>Die Wetterdaten werden über eine API abgefragt und die Daten anschliessend dargestellt, diese Wetterdaten fliessen auch
+      in einen neuen Fang ein sowie der Standort welches über das Gerät ermittelt wird.</p>
+      <p>Der User kann auch die Mondphasen anschauen der nächsten 7-Tage</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/felchenWebApp/forecast.jpg" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(5)">
+    <div class="text">
+      <p>Mit der 7 Tage Prognose kann der User die Wetterdaten für die nächsten Tage abfragen.
+      Auch hier wird der Standort durch das Gerät ermittelt und eine Anfrage an eine Wetter API gesendet.</p>
+      <p>Die erhaltenen Daten werden für die nächsten 7-Tage aufbereitet und angezeigt.</p>
+    </div>
+  </div>
+  <hr>
+  <h4>Verwendete Technologien:</h4>
+  <ul>
+    <li>Angular</li>
+    <li>Bootstrap</li>
+    <li>.NET Core 5</li>
+    <li>MSSQL</li>
+  </ul>
+  <hr>
+  <h4>Umsetzung:</h4>
+  <p>Das Frontend wurde mit Angular programmiert und Bootstrap verwendet für die Darstellung</p>
+  <p>Für das Backend wurde eine RESTFull API mit .NET Core 5 in C# programmiert. Die REST wurde komplett asynchron programmiert</p>
+  <p>Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.</p>
+  <hr>
+  <h4>Felchen WenApp</h4>
+  <p>Die Applokation kann gerne benützt und getestet werden.</p>
+  <div class="demoButton">
+    <button class="btn btn-success" (click)="onProject()">Zur Felchen Webapp</button>
+  </div>
+</div>
+
+
