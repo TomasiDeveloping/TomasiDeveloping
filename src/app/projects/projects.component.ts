@@ -15,4 +15,8 @@ export class ProjectsComponent implements OnInit {
   onClick(): void {
     window.open('https://github.com/TomasiDeveloping', '_blank');
   }
+
+  onUptimeRobot(): void {
+    window.open('https://stats.uptimerobot.com/6VE76ToB56', '_blank');
+  }
 }

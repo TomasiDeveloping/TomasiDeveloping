@@ -9,6 +9,10 @@ a {
   text-decoration: none
 }
 
+img:hover {
+  cursor: pointer;
+}
+
 /*h4 {*/
 /*  text-align: center;*/
 /*  margin: 30px 0;*/
