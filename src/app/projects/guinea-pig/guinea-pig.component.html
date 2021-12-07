@@ -1,0 +1,81 @@
+<div class="container">
+  <h3>Meerschweinchen Gesundheits-Check</h3>
+  <p>Mit dieser kleinen Webapplikation lassen sich Gesundheits-Checks für die Meerschweinchen speichern.</p>
+  <p>Jeder Check wird in der Datenbank gespeichert.</p>
+  <p>Zu jedem Meerschweinchen lassen sich Daten wie Name, Alter, Geschlecht und Rasse speichern.</p>
+  <hr>
+  <h4>Funktionen:</h4>
+  <div class="screens">
+    <img src="../../../assets/images/guineaPig/guinePig1.png" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(0)">
+    <div class="text">
+      <p>Die Applikation besteht aus einer Hauptseite, auf der alle Meerschweinchen aus der Datenbank angezeigt werden.</p>
+      <p>Es können weitere Meerschweinchen hinzugefügt werden</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/guineaPig/guinePig2.png" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(1)">
+    <div class="text">
+      <p>Mit dem Button bearbeiten kann jedes Meerschweinchen bearbeiten werden, um vorhandenen Daten anzupassen.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/guineaPig/guinePig3.png" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(2)">
+    <div class="text">
+      <p>Mit Klick auf Neuer Check kann ein neuer Check für das ausgewählte Meerschweinchen hinzugefügt werden</p>
+      <p>Der Check besteht aus diversen Checkboxen, um auszuwählen was Geprüft wurde. Zu jedem Check kann wen gewünscht auch ein Kommentar hinzugefügt werden</p>
+      <p>Jeder Check hat ein Info Button, um eine kleine Beschreibung zum Check aufzurufen</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/guineaPig/guinePig4.png" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(3)">
+    <div class="text">
+      <p>Wurde der Info Button für ein Check geklickt erhält man eine kleine Beschreibung was bei diesem Test wichtig ist</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/guineaPig/guinePig5.png" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(4)">
+    <div class="text">
+      <p>Mit Klick auf Checks wird dem Benutzer die letzten 10 Checks für das ausgewählte Meerschweinchen angezeigt</p>
+      <p>In der Hauptanzeige sieht man das Datum und das Gewicht</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img src="../../../assets/images/guineaPig/guinePig6.png" style="width: 40%"
+         class="img-fluid images"
+         alt="..."
+         (click)="open(5)">
+    <div class="text">
+      <p>Wurde für ein Check die Detail Ansicht geklickt sieht man den kompletten Check inklusive Kommentare sofern ein Kommentar für den Check hinterlegt wurde</p>
+    </div>
+  </div>
+  <hr>
+  <h4>Verwendete Technologien:</h4>
+  <ul>
+    <li>Angular 13.0.3</li>
+    <li>Bootstrap 5</li>
+    <li>.NET Core 6</li>
+    <li>MSSQL</li>
+  </ul>
+  <hr>
+  <h4>Umsetzung:</h4>
+  <p>Das Frontend wurde mit Angular programmiert und Bootstrap verwendet für die Darstellung</p>
+  <p>Für das Backend wurde eine RESTFull API mit .NET Core 6 in C# programmiert. Die REST wurde komplett asynchron programmiert</p>
+  <p>Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.</p>
+</div>
+
+

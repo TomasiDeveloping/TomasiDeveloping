@@ -27,6 +27,7 @@ import {QRCodeModule} from 'angular2-qrcode';
 import { LightboxModule } from 'ngx-lightbox';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FelchenWebappComponent } from './projects/felchen-webapp/felchen-webapp.component';
+import { GuineaPigComponent } from './projects/guinea-pig/guinea-pig.component';
 
 
 
@@ -50,6 +51,7 @@ import { FelchenWebappComponent } from './projects/felchen-webapp/felchen-webapp
     FishingLizenzManagerComponent,
     TomasiDevelopingComponent,
     FelchenWebappComponent,
+    GuineaPigComponent,
   ],
     imports: [
         BrowserModule,
