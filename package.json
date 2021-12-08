@@ -27,7 +27,7 @@
     "lightbox2": "^2.11.3",
     "ng-gallery": "^5.1.1",
     "ngx-bootstrap": "^7.1.0",
-    "ngx-bootstrap-navbar": "0.0.5",
+    "ngx-bootstrap-navbar": "1.0.0",
     "ngx-lightbox": "^2.2.2",
     "ngx-scrolltop": "^2.3.1",
     "ngx-spinner": "^11.0.1",
