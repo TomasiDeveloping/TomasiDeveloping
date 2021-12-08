@@ -2,8 +2,12 @@
   margin-top: 5%;
 }
 .button {
+  margin-top: 20px;
   display: flex;
   justify-content: flex-end;
+}
+.button button {
+  width: 200px;
 }
 h3 {
   font-family: 'Metal Mania', cursive;
