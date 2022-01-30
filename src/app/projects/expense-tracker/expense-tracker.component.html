@@ -1,0 +1,104 @@
+<div class="container">
+  <h3>Kostenmanager</h3>
+  <p>Mit dieser App lassen sich Ausgaben wie auch Einnahmen bequem Online erfassen und Verwalten.</p>
+  <p>Ein und Ausgaben können in Kategorien unterteilt werden.</p>
+  <p>Alle Ein und Ausgaben können jederzeit bearbeitet oder gelöscht werden. Es kann zudem für jeden Monat oder das ganze Jahr eine
+    Excel Statistik heruntergeladen werden.</p>
+  <hr>
+  <h4>Funktionen:</h4>
+  <div class="screens">
+    <img (click)="open(0)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/expenseTracker/Home.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Auf der Startseite wird immer der aktuelle Monat angezeigt.</p>
+      <p>Wurde in den Einstellungen ein Budget gesetzt zeigt der % Balken immer die Ausgaben in % zum Budget an.
+        Wurde in den Einstellungen gewählt das der Kostenmanager mit Einnahmen geführt wird, wird zudem die aktuelle Differenz zwischen Einnahmen und
+        Ausgaben berechnet.</p>
+      <p>Im unteren Teil werden alle Ausgaben pro Kategorie sortiert und der Prozentsatz der Kategorie zu allen aktuellen Ausgaben berechnet
+        und angezeigt.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(1)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/expenseTracker/addExpense.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Mit Klick auf Ausgabe Erfassen lässt sich schnell eine neue Ausgabe eintragen.</p>
+      <p>Bei der Kategorie stehen alle erfassten Kategorien zur Verfügung, oder es kann auch gleich eine neue Kategorie für die Ausgabe erfasst werden.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(2)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/expenseTracker/expenses.png"
+         style="width: 80%">
+    <div class="text">
+      <p>In den Ausgaben sieht man alle Ausgaben für den aktuellen Monat.</p>
+      <p>Alle Ausgaben für jede Kategorie werden aufgelistet mit dem Preis und der Gesamtsumme der Kategorie.</p>
+      <p>Jede Ausgabe kann hier bearbeitet oder auch gelöscht werden.</p>
+      <p>Es kann nach Wunsch auch bis 4 Jahre zurück oder 1 Jahr in die Zukunft gewählt werden, um die Ausgaben anzuschauen oder zu bearbeiten.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(3)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/expenseTracker/categories.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Auf der Kategorien Seite erhält der Benutzer eine Übersicht, über die Erfassten Kategorien für Ein und Ausgaben.</p>
+      <p>Jede Kategorie kann hier bearbeitet oder nach Wunsch auch wieder gelöscht werden.</p>
+      <p>Auf dieser Seite lassen sich auch neue Kategorien erfassen.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(4)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/expenseTracker/statistics.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Auf der Statistik Seite erhält der Benutzer ein Diagramm mit den ganzen Ausgaben für das Aktuelle Jahr.</p>
+      <p>Wird die Applikation mit Einnahmen geführt, wird auch ein Diagramm für die Einnahmen angezeigt, sowie eine Berechnung der Differenz zwischen
+        Ein und Ausgaben.</p>
+      <p>Der Benutzer kann nach Wunsch hier direkt eine Jahresstatistik als Excel herunterladen oder für einen gewünschten Monat eine Detaillierte
+        Monatsstatistik.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(5)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/expenseTracker/excel.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Beispiel einer Detaillierter Monatsstatistik als Excel.</p>
+      <p></p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(6)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/expenseTracker/settings.png"
+         style="width: 80%">
+    <div class="text">
+      <p>In den Einstellungen kann der Benutzer sein Account verwalten.</p>
+      <p>Es kann hier eingestellt werden, ob die Applikation nur mit Ausgaben geführt werden möchten, was eine Auswirkung auf die Anzeige, wie auch
+        die Excel Statistiken hat. Auch das Monatsbudget kann hier jederzeit geändert werden.</p>
+    </div>
+  </div>
+  <hr>
+  <h4>Verwendete Technologien:</h4>
+  <ul>
+    <li>Angular 13.1.1</li>
+    <li>Bootstrap 5</li>
+    <li>.NET 6</li>
+    <li>MSSQL</li>
+  </ul>
+  <hr>
+  <h4>Umsetzung:</h4>
+  <p>Das Frontend wurde mit Angular programmiert und Bootstrap verwendet für die Darstellung</p>
+  <p>Für das Backend wurde eine RESTFull API mit .NET 6 in C# programmiert. Die REST wurde komplett asynchron
+    programmiert</p>
+  <p>Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.</p>
+</div>

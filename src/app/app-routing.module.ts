@@ -15,6 +15,7 @@ import {FishingLizenzManagerComponent} from './projects/fishing-lizenz-manager/f
 import {TomasiDevelopingComponent} from './projects/tomasi-developing/tomasi-developing.component';
 import {FelchenWebappComponent} from './projects/felchen-webapp/felchen-webapp.component';
 import {GuineaPigComponent} from './projects/guinea-pig/guinea-pig.component';
+import {ExpenseTrackerComponent} from "./projects/expense-tracker/expense-tracker.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'projects/tomasiDeveloping', component: TomasiDevelopingComponent},
   {path: 'projects/felchenWebApp', component: FelchenWebappComponent},
   {path: 'projects/guineaPig', component: GuineaPigComponent},
+  {path: 'projects/expensetracker', component: ExpenseTrackerComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'impressum', component: ImpressumComponent},
   {path: 'privacy', component: PrivacyComponent},

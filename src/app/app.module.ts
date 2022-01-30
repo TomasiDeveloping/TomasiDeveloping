@@ -28,6 +28,7 @@ import { LightboxModule } from 'ngx-lightbox';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FelchenWebappComponent } from './projects/felchen-webapp/felchen-webapp.component';
 import { GuineaPigComponent } from './projects/guinea-pig/guinea-pig.component';
+import { ExpenseTrackerComponent } from './projects/expense-tracker/expense-tracker.component';
 
 
 
@@ -52,6 +53,7 @@ import { GuineaPigComponent } from './projects/guinea-pig/guinea-pig.component';
     TomasiDevelopingComponent,
     FelchenWebappComponent,
     GuineaPigComponent,
+    ExpenseTrackerComponent,
   ],
     imports: [
         BrowserModule,
