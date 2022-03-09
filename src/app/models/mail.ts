@@ -1,7 +1,7 @@
 export interface Mail {
-  firstName: string;
-  lastName: string;
+  senderAddress: string;
+  receiverAddress: string;
+  name: string;
   subject: string;
-  email: string;
   message: string;
 }

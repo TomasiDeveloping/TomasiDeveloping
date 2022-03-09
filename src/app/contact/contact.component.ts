@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import Swal from 'sweetalert2';
 import {MailService} from '../services/mail.service';
 import {NgxSpinnerService} from 'ngx-spinner';
+import {Mail} from "../models/mail";
 
 @Component({
   selector: 'app-contact',
@@ -32,8 +33,41 @@ export class ContactComponent implements OnInit {
 
   onSubmit(): void {
     this.spinnerService.show().then();
-    this.mailService.sendContactMail(this.contactForm.value).subscribe(response => {
-      if (response) {
+    const mail: Mail = {
+      name: this.contactForm.controls['firstName'].value + ' ' + this.contactForm.controls['lastName'].value,
+      subject: this.contactForm.controls['subject'].value,
+      senderAddress: this.contactForm.controls['email'].value,
+      receiverAddress: 'info@tomasi-developing.ch',
+      message: this.contactForm.controls['message'].value
+    };
+    this.mailService.sendContactMail(mail).subscribe({
+      next: ((response) => {
+        if (response) {
+          this.spinnerService.hide().then();
+          Swal.fire({
+            toast: true,
+            position: 'bottom-right',
+            title: 'Kontaktformular',
+            timer: 3000,
+            timerProgressBar: true,
+            showConfirmButton: false,
+            html: 'Formular wurde erfolgreich gesendet.',
+            icon: 'success'
+          }).then();
+        } else {
+          this.spinnerService.hide().then();
+          Swal.fire({
+            toast: true,
+            position: 'bottom-right',
+            title: 'Kontaktformular',
+            timer: 3000,
+            timerProgressBar: true,
+            showConfirmButton: false,
+            html: 'Formular konnte nicht gesendet werden!',
+            icon: 'error'
+          }).then();
+        }
+      }), error: (error) => {
         this.spinnerService.hide().then();
         Swal.fire({
           toast: true,
@@ -42,34 +76,10 @@ export class ContactComponent implements OnInit {
           timer: 3000,
           timerProgressBar: true,
           showConfirmButton: false,
-          html: 'Formular wurde erfolgreich gesendet.',
-          icon: 'success'
-        }).then();
-      } else {
-        this.spinnerService.hide().then();
-        Swal.fire({
-          toast: true,
-          position: 'bottom-right',
-          title: 'Kontaktformular',
-          timer: 3000,
-          timerProgressBar: true,
-          showConfirmButton: false,
-          html: 'Formular konnte nicht gesendet werden!',
+          html: error.message,
           icon: 'error'
         }).then();
       }
-    }, error => {
-      this.spinnerService.hide().then();
-      Swal.fire({
-        toast: true,
-        position: 'bottom-right',
-        title: 'Kontaktformular',
-        timer: 3000,
-        timerProgressBar: true,
-        showConfirmButton: false,
-        html: error.message,
-        icon: 'error'
-      }).then();
     });
     this.contactForm.reset();
   }
