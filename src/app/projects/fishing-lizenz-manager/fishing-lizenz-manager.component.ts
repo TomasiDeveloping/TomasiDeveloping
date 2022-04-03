@@ -76,6 +76,6 @@ export class FishingLizenzManagerComponent implements OnInit {
   }
 
   onDemoClick(): void {
-    window.open('https://fischerlizenzmanager.ch/home', '_blank');
+    window.open('https://fischerlizenzmanager.tomasi-developing.ch/home', '_blank');
   }
 }
