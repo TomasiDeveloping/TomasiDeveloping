@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UntypedFormControl, UntypedFormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import Swal from 'sweetalert2';
 import {MailService} from '../services/mail.service';
 import {NgxSpinnerService} from 'ngx-spinner';
@@ -11,7 +11,7 @@ import {Mail} from "../models/mail";
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  contactForm: UntypedFormGroup;
+  contactForm: FormGroup;
 
   constructor(private mailService: MailService, private spinnerService: NgxSpinnerService) {
   }
@@ -21,13 +21,13 @@ export class ContactComponent implements OnInit {
   }
 
   initForm(): void {
-    this.contactForm = new UntypedFormGroup({
-      firstName: new UntypedFormControl('', Validators.required),
-      lastName: new UntypedFormControl('', Validators.required),
-      subject: new UntypedFormControl('', Validators.required),
-      email: new UntypedFormControl('', [Validators.required,
+    this.contactForm = new FormGroup({
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      subject: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required,
         Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]),
-      message: new UntypedFormControl('', Validators.required)
+      message: new FormControl('', Validators.required)
     });
   }
 
