@@ -29,6 +29,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FelchenWebappComponent } from './projects/felchen-webapp/felchen-webapp.component';
 import { GuineaPigComponent } from './projects/guinea-pig/guinea-pig.component';
 import { ExpenseTrackerComponent } from './projects/expense-tracker/expense-tracker.component';
+import { SwissWatersComponent } from './projects/swiss-waters/swiss-waters.component';
 
 
 
@@ -54,6 +55,7 @@ import { ExpenseTrackerComponent } from './projects/expense-tracker/expense-trac
     FelchenWebappComponent,
     GuineaPigComponent,
     ExpenseTrackerComponent,
+    SwissWatersComponent,
   ],
     imports: [
         BrowserModule,

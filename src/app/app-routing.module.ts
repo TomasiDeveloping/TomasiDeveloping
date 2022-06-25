@@ -16,6 +16,7 @@ import {TomasiDevelopingComponent} from './projects/tomasi-developing/tomasi-dev
 import {FelchenWebappComponent} from './projects/felchen-webapp/felchen-webapp.component';
 import {GuineaPigComponent} from './projects/guinea-pig/guinea-pig.component';
 import {ExpenseTrackerComponent} from "./projects/expense-tracker/expense-tracker.component";
+import {SwissWatersComponent} from "./projects/swiss-waters/swiss-waters.component";
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'projects/felchenWebApp', component: FelchenWebappComponent},
   {path: 'projects/guineaPig', component: GuineaPigComponent},
   {path: 'projects/expensetracker', component: ExpenseTrackerComponent},
+  {path: 'projects/swisswaters', component: SwissWatersComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'impressum', component: ImpressumComponent},
   {path: 'privacy', component: PrivacyComponent},

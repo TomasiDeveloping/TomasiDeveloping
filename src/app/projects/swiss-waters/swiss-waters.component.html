@@ -1,0 +1,85 @@
+<div class="container">
+  <h3>Schweizer Gewässer Daten</h3>
+  <p>Die Idee zu dieser Applikation entstand wieder durch die Inspiration zum Angeln.</p>
+  <p>Ich stellte mir die Frage, ob ein Gewässer bereits die nötige Temperatur hatte, um einen ersten Nacht Angel Ausflug
+    zu wagen.</p>
+  <p>Ich suchte im Internet wo und wie ich zu diesen Informationen kommen kann. Ich wurde auch fündig und konnte mir die
+    Daten anschauen. Da kam mir die Idee, das andere Angler bestimmt auch an Gewässer Daten interessiert sind und solche
+    Informationen gerne sehen würde.</p>
+  <p>Die Daten konnte ich mit etwas suchen beim Bundesamt für Umwelt finden. Ich kontaktierte das BAFU mit der Frage ob
+    es möglich sei diese Daten zu beziehen.</p>
+  <p>Nach wenigen Tagen bekam ich Antwort und einen Zugang um die Daten direkt beim BAFU als XML abzurufen und ich
+    begann die Applikation zu Entwickeln.</p>
+  <hr>
+  <h4>Startseite</h4>
+  <div class="screens">
+    <img (click)="open(0)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/swissWaters/Home.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Die Idee war eine Startseite zu Entwickeln wo alle Verfügbaren Station angezeigt werden sollen mit den
+        Aktuellen Messdaten.</p>
+      <p>Es Entstand eine Card für jede einzelne Station mit den Verfügbaren Daten, die diese Station liefert.</p>
+      <p>Um es für den Benutzer etwas einfach zu halten, gibt es eine Suchleiste, welche alle Stationen sortiert.</p>
+      <p>Mit dem Kantone Dropdown kann der Benutzer auch alle Gewässer zu den gewünschten Kantonen sortieren.</p>
+      <p>Mit Klick auf den Stern (Zu den Favoriten) können Stationen zu eigenen Favoriten hinzugefügt werden und auch
+        nur nach diesen Sortiert werden.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(1)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/swissWaters/Station.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Nicht alle Stationen bieten die gleichen Messdaten an.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(2)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/swissWaters/Detail.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Mit Klick auf Details kann für jede Station eine Detail Ansicht angezeigt werden.</p>
+      <p>In der Ansicht werden für alle Verfügbaren Messungen der Aktuelle Wert, Mittelwert letzten 24H, Maximalerwert
+        letzten 24H und Minimalerwert letzten 24h anzeigt.</p>
+      <p>Verfügt die aktuelle Station über Temperatur Messwerte werden, die alle Messungen der letzten 7 Tage in einem
+        Diagramm anteigt.</p>
+    </div>
+  </div>
+  <div class="screens">
+    <img (click)="open(3)" alt="..."
+         class="img-fluid images"
+         src="../../../assets/images/swissWaters/SwissWatersAPI.png"
+         style="width: 80%">
+    <div class="text">
+      <p>Die Applikation verfügt über eine öffentliche API.</p>
+      <p>Mit einem API Key können Benutzer Daten direkt als JSON über die API abrufen und in einer eigenen Applikation
+        verarbeiten.</p>
+    </div>
+  </div>
+  <hr>
+  <h4>Verwendete Technologien:</h4>
+  <ul>
+    <li>Angular 13.3.0</li>
+    <li>Bootstrap 5</li>
+    <li>.NET 6</li>
+    <li>MSSQL</li>
+    <li>GRPC</li>
+  </ul>
+  <hr>
+  <h4>Umsetzung:</h4>
+  <p>Das Frontend wurde mit Angular programmiert und Bootstrap verwendet für die Darstellung</p>
+  <p>Für das Backend wurde eine RESTFull API mit .NET 6 in C# programmiert. Die REST wurde komplett asynchron
+    programmiert
+  <p>In die Applikation wurde ein GRPC Service implemnetiert für die Stationsdaten</p>
+  <p>Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.</p>
+  <hr>
+  <h4>Schweizer Gewässerdaten Webseite</h4>
+  <div class="demoButton">
+    <button (click)="onGoToWebsite()" class="btn btn-success">Zur Webseite</button>
+  </div>
+</div>
+

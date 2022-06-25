@@ -55,4 +55,7 @@ export class ExpenseTrackerComponent implements OnInit {
     this.lightbox.close();
   }
 
+  onDemoClick() {
+    window.open('https://kostenmanager.tomasi-developing.ch/home', '_blank');
+  }
 }
