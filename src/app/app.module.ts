@@ -23,7 +23,6 @@ import { FelchenAppComponent } from './projects/felchen-app/felchen-app.componen
 import { GameInventoryComponent } from './projects/game-inventory/game-inventory.component';
 import { FishingLizenzManagerComponent } from './projects/fishing-lizenz-manager/fishing-lizenz-manager.component';
 import { TomasiDevelopingComponent } from './projects/tomasi-developing/tomasi-developing.component';
-import {QRCodeModule} from 'angular2-qrcode';
 import { LightboxModule } from 'ngx-lightbox';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { FelchenWebappComponent } from './projects/felchen-webapp/felchen-webapp.component';
@@ -65,7 +64,6 @@ import { SwissWatersComponent } from './projects/swiss-waters/swiss-waters.compo
         ReactiveFormsModule,
       HttpClientModule,
       NgxSpinnerModule,
-      QRCodeModule,
       LightboxModule,
       NgxScrollTopModule
     ],
