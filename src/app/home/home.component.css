@@ -8,17 +8,62 @@
   font-size: 6vw;
   align-self: center;
 }
-.content{
-  margin-top: 50px;
-}
-.card-img{
-  width: 100%!important;
-  height: 200px!important;
-  object-fit: cover;
-}
-h4{
+
+h4, h3{
   text-align: center;
 }
-.card-title {
-  font-family: 'Metal Mania', cursive;
+section {
+  margin-bottom: 20px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+section:last-child {
+  padding-bottom: 100px;
+}
+.tools-box {
+  margin-top: 30px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.tools-box > i {
+  font-size: 40px;
+}
+
+.certification {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  flex-wrap: wrap;
+}
+.certification > img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 427px) {
+  .certification > img {
+    width: 80px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .certification > img {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .certification > img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+  }
 }
