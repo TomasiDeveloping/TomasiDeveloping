@@ -76,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "TomasiDeveloping:build"
+            "buildTarget": "TomasiDeveloping:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "TomasiDeveloping:build:production"
+              "buildTarget": "TomasiDeveloping:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TomasiDeveloping:build"
+            "buildTarget": "TomasiDeveloping:build"
           }
         },
         "test": {
