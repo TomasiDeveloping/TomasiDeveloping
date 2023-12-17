@@ -29,6 +29,8 @@ import { FelchenWebappComponent } from './projects/felchen-webapp/felchen-webapp
 import { GuineaPigComponent } from './projects/guinea-pig/guinea-pig.component';
 import { ExpenseTrackerComponent } from './projects/expense-tracker/expense-tracker.component';
 import { SwissWatersComponent } from './projects/swiss-waters/swiss-waters.component';
+import {GalleryModule} from "ng-gallery";
+import {DaettwilerPond} from "./projects/daetwiller-pond/daettwiler-pond.component";
 
 
 
@@ -55,6 +57,7 @@ import { SwissWatersComponent } from './projects/swiss-waters/swiss-waters.compo
     GuineaPigComponent,
     ExpenseTrackerComponent,
     SwissWatersComponent,
+    DaettwilerPond
   ],
     imports: [
         BrowserModule,
@@ -65,7 +68,8 @@ import { SwissWatersComponent } from './projects/swiss-waters/swiss-waters.compo
       HttpClientModule,
       NgxSpinnerModule,
       LightboxModule,
-      NgxScrollTopModule
+      NgxScrollTopModule,
+      GalleryModule
     ],
   providers: [],
   bootstrap: [AppComponent]

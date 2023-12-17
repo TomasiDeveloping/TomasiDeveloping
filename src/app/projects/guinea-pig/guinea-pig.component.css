@@ -1,38 +1,17 @@
-.container{
+.container {
   margin-top: 5%;
 }
 
-h3{
+h3 {
   font-family: 'Metal Mania', cursive;
+  color: #f60c65;
 }
-.images {
-  width: auto;
-  height: auto;
+
+h4 {
+  color: #5751a4;
 }
-img:hover{
-  cursor: pointer;
-}
-.screens {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-.text{
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.demoButton {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-@media screen and (min-width: 1020px) {
-  .images {
-    width: 70%;
-    height: auto;
-  }
+
+section {
+  margin-top: 20px;
 }
 

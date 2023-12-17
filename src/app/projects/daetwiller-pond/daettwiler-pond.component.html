@@ -1,0 +1,44 @@
+<div class="container">
+  <h3 class="text-center">Dättwiler Weiher Online Platform</h3>
+  <p>
+    Die Dättwiler Weiher Online Platform. Dieses aufregende Projekt vereint innovative Technologien,
+    Nutzerfreundlichkeit und eine Leidenschaft fürs Angeln. Hier ist ein Überblick über die Schlüsselfunktionen und
+    Technologien, die in dieses spannende Projekt eingeflossen sind:
+  </p>
+  <section>
+    <gallery *ngIf="galleryConfig$ | async; let config"
+             [items]="images"
+             [thumbWidth]="config.thumbWidth"
+             [thumbHeight]="config.thumbHeight"
+             [thumbPosition]="config.thumbPosition"
+             [imageSize]="'contain'"
+             [counter]="false"
+             [itemAutosize]="false"
+             [autoHeight]="false"
+             [playerInterval]="5000"
+             [autoPlay]="false"></gallery>
+  </section>
+  <section>
+    <ol>
+      <li>Temperaturüberwachung per LoRa:</li>
+      <p>
+        Ein hochmoderner Temperatursensor am Dättwiler Weiher sendet kontinuierlich Echtzeitdaten über das LoRa-Netzwerk. Die Wassertemperatur wird auf der Webseite präzise und benutzerfreundlich dargestellt, um Anglern die optimalen Bedingungen für ihren Ausflug zu bieten.
+      </p>
+      <li>Mitgliederbereich mit Fischerlizenzverwaltung:</li>
+      <p>
+        Für registrierte Mitglieder mit gültiger Fischerlizenz bietet die Plattform einen exklusiven Bereich. Hier können Fischer ihre Lizenzinformationen verwalten, Schonzeiten für verschiedene Fischarten überprüfen und wichtige PDF-Dokumente herunterladen, die die aktuellen Vorschriften und Richtlinien enthalten.
+      </p>
+      <li>Administrationsbereich mit Swiss QR Rechnung:</li>
+      <p>
+        Der Admin-Bereich ermöglicht eine nahtlose Verwaltung von Mitgliedern, Lizenzen und Vorschriften. Administratoren können nicht nur bestehende Lizenzen überprüfen, sondern auch neue Lizenzen erstellen. Die Integration einer Swiss QR Rechnung vereinfacht den Zahlungsprozess und trägt zu einem effizienten Management bei.
+      </p>
+      <li>Geplante Funktionen: Fangstatistik und Lexikon:</li>
+      <p>
+        In der nächsten Entwicklungsphase planen wir die Implementierung einer Fangstatistik, die Anglern ermöglicht, ihre Erfolge zu verfolgen und ihre Statistiken online zu teilen. Außerdem wird ein umfassendes Lexikon hinzugefügt, das Informationen zu verschiedenen Fischarten und Angeltechniken bietet.
+      </p>
+    </ol>
+    <p>
+      Dieses Projekt ist nicht nur eine technische Meisterleistung, sondern auch ein Beitrag zur Förderung der Gemeinschaft von Angelfreunden am Dättwiler Weiher. Es ist ein Beispiel dafür, wie Technologie die Leidenschaft für Outdoor-Aktivitäten unterstützen kann.
+    </p>
+  </section>
+</div>

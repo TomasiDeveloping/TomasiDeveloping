@@ -1,116 +1,88 @@
 <div class="container">
-  <h3>Felchen App</h3>
-  <p>Die Fischerei auf Felchen ist eine Grosse Wissenschaft, ich kenne viele Fischerkollegen/Innen
-    die beim Angeln auf Felchen sich diverse Notizen machen wie z.B. Haken Grösse,
-    Temperatur, Wassertemperatur, Nymphen Farbe, Wetter usw.</p>
-  <p>Die Idee zum Projekt entstand in meiner Ausbildung zum Applikationsentwickler.</p>
-  <p>Unsere Aufgabe war es eine Mobil App zu Entwickeln mit ReactNative.</p>
-  <p>In der Schule hatten wir nicht sehr viel Zeit für dieses Projekt, dennoch wurde das Projekt fertig
-    und ich war ziemlich zufrieden. Was mich aber störte war das für das Backend der Applikation Firebase
-    eingesetzt wurde. Zudem war die App eigentlich für mich, also eine Person.</p>
-  <p>Nach meiner Ausbildung hat mich das Projekt nochmals gepackt und ich habe die komplette App mit Ionic
-    umgeschrieben, ein eigenes Backend programmiert sowie eine Login Funktion implementiert.</p>
-  <hr>
+  <h3 class="text-center">Felchen App - Die App für leidenschaftliche Felchen-Fischer:</h3>
+  <p>
+    Die Felchen App ist das Ergebnis meiner Ausbildung zum Applikationsentwickler, bei der ich die Herausforderung
+    hatte, eine mobile App mit ReactNative zu entwickeln. Ursprünglich für den persönlichen Gebrauch konzipiert, wurde
+    die App später komplett überarbeitet und mit Ionic neu implementiert. Das eigene Backend und eine Login-Funktion
+    wurden hinzugefügt, um die App auf eine breitere Nutzerbasis auszurichten.
+  </p>
   <h4>Beschreibung:</h4>
-  <p>Mit dieser App sollen gefangene Felchen gespeichert werden.</p>
-  <p>Die Felchen Fischerei ist eine Grosse Wissenschaft. Es wird mit diversen Nymphen geangelt,
-    diese unterscheiden sich in Farbe, Hacken Grösse und anderen Merkmalen.</p>
-  <p>Mit der App sollen all diese Eigenschaften gespeichert werden, um auf die Daten der Fänge zurück greifen zu
-    können.</p>
-  <hr>
-  <h4>Funktionen:</h4>
-
-  <div class="screens">
-    <img src="../../../assets/images/felchenApp/statistikScreen.jpg"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(0)">
-    <div class="text">
-      <p>Wird die App gestartet und hat man sich mit seiner E-Mail Adresse
-        und Passwort erfolgreich angemeldet kommt man auf den Statistik Screen</p>
-      <p>Im Screen werden alle Fänge, die man gespeichert hat nach Datum geladen</p>
-      <p>Mit Klick auf Details zum Fang gelangt man zum Detail Screen mit allen gespeicherten Daten des Fanges</p>
-    </div>
-  </div>
-
-  <div class="screens">
-    <img src="../../../assets/images/felchenApp/DetailScreen.jpg"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(1)">
-    <div class="text">
-      <p>Im Detail Screen sieht der Benutzer alle Details, die zum Fang gespeichert wurden.</p>
-      <p>Der Benutzer kann hier auch einen Fang wieder löschen</p>
-    </div>
-  </div>
-
-  <div class="screens">
-    <img src="../../../assets/images/felchenApp/AddCatchScreen.jpg"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(2)">
-    <div class="text">
-      <p>Klick der Benutzer in der Statistik auf Fang hinzufügen wird ein neuer Screen geöffnet, um einen neuen Fang einzutragen</p>
-      <p>Der Benutzer kann hier die gewünschten Daten eintragen. Die Wetterdaten werden automatisch über eine API abgefragt</p>
-      <p>Die Wetterdaten können auch manuell noch angepasst werden.</p>
-    </div>
-  </div>
-
-  <div class="screens">
-    <img src="../../../assets/images/felchenApp/WetterScreen.jpg"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(3)">
-    <div class="text">
-      <p>Das Wetter lässt sich über den Tab Wetter laden. Der Benutzer kann die Wetterdaten automatisch per GPS laden oder per PLZ oder Ort</p>
-      <p>Die Wetterdaten werden direkt über eine API angefragt und verarbeitet</p>
-      <p>Die Hintergründe wechseln sich je nach Wetter oder Urzeit</p>
-    </div>
-  </div>
-
-  <div>
-    <p>Im Tab Einstellungen kann der Benutzer seine Angaben wie Name oder E-Mail-Adresse ändern</p>
-    <p>Es besteht die Möglichkeit sich auszuloggen, das Passwort zu ändern oder den Account komplett zu löschen</p>
-  </div>
-<hr>
-  <h4>Vorgesehene Features:</h4>
-  <p>Bei Gelegenheit und genügend User, welche die App benützen sind folgende Features noch vorgesehen:</p>
-  <ul>
-    <li>Öffentliche Fänge anderer User der App</li>
-    <li>Fang bearbeiten</li>
-    <li>Fänge sortieren</li>
-  </ul>
-
-  <hr>
-  <h4>Verwendete Technologien:</h4>
-  <ul>
-    <li>Ionic</li>
-    <li>ASP.NET</li>
-    <li>MSSQL</li>
-  </ul>
-
-  <hr>
-  <h4>Umsetzung:</h4>
-  <p>Die App wurde mit Ionic programmiert.</p>
-  <p>Für das Backend wurde eine RESTFull API in ASP.NET in C# programmiert</p>
-  <p>Die App kommuniziert über das HTTP Protokoll mit der RESTFull API</p>
-  <p>Als Datenbank wurde eine Microsoft SQL-Datenbank eingesetzt</p>
-
-  <div class="d-grid gap-2 mt-4">
-    <button class="btn btn-success mb-4" (click)="showDownload = !showDownload">App im PlayStore herunterladen</button>
-  </div>
-
-  <ng-container *ngIf="showDownload">
-    <div class="download">
-      <div>
-        <qr-code [value]="'https://play.google.com/store/apps/details?id=ch.tomasi.felche'" [size]="200"></qr-code>
-      </div>
-      <div>
-        <img id="playLogo" src="assets/images/play-store-logo-33884.png" alt="playStoreLogo" class="img-thumbnail"
-             (click)="onPlayStore()">
-      </div>
-    </div>
-  </ng-container>
+  <p>
+    Die Felchen App bietet passionierten Felchen-Fischern die Möglichkeit, ihre Fänge systematisch zu speichern. Die App
+    unterstützt die Komplexität der Felchen-Fischerei, bei der verschiedene Nymphen mit Unterschieden in Farbe,
+    Hakengröße und anderen Merkmalen verwendet werden.
+  </p>
+  <section>
+    <gallery *ngIf="galleryConfig$ | async; let config"
+             [items]="images"
+             [thumbWidth]="config.thumbWidth"
+             [thumbHeight]="config.thumbHeight"
+             [thumbPosition]="config.thumbPosition"
+             [imageSize]="'contain'"
+             [counter]="false"
+             [itemAutosize]="false"
+             [autoHeight]="false"
+             [playerInterval]="5000"
+             [autoPlay]="false"></gallery>
+  </section>
+  <section>
+    <h4>Funktionen:</h4>
+    <ol>
+      <li>Statistik Screen:</li>
+      <ul>
+        <li>Anzeigen aller gespeicherten Fänge nach Datum sortiert.</li>
+        <li>Zugriff auf den Detail Screen für jeden einzelnen Fang.</li>
+      </ul>
+      <li>Detail Screen:</li>
+      <ul>
+        <li>Detaillierte Anzeige aller gespeicherten Daten für einen bestimmten Fang.</li>
+        <li>Möglichkeit, einen Fang zu löschen.</li>
+      </ul>
+      <li>Fang hinzufügen:</li>
+      <ul>
+        <li>Erfassung neuer Fangdaten, darunter Wetterinformationen automatisch über eine API.</li>
+        <li>Manuelle Anpassung der Wetterdaten möglich.</li>
+      </ul>
+      <li>Wetterdaten:</li>
+      <ul>
+        <li>Automatisches Laden von Wetterdaten per GPS oder manuelle Eingabe von PLZ oder Ort.</li>
+        <li>Dynamische Hintergrundänderungen basierend auf Wetter und Uhrzeit.</li>
+      </ul>
+      <li>Einstellungen:</li>
+      <ul>
+        <li>Benutzer können persönliche Angaben wie Namen oder E-Mail-Adresse ändern.</li>
+        <li>Funktionen zum Ausloggen, Passwort ändern oder den Account löschen.</li>
+      </ul>
+    </ol>
+  </section>
+  <section>
+    <h4>Vorgesehene Features:</h4>
+    <ul>
+      <li>Öffentliche Fänge anderer App-Benutzer.</li>
+      <li>Bearbeiten von gespeicherten Fängen.</li>
+      <li>Sortieren der Fänge.</li>
+    </ul>
+  </section>
+  <section>
+    <h4>Verwendete Technologien:</h4>
+    <ul>
+      <li><b>Frontend:</b> Ionic</li>
+      <li><b>Backend:</b> ASP.NET (RESTful API in C#)</li>
+      <li><b>Datenbank:</b> Microsoft SQL</li>
+    </ul>
+  </section>
+  <section>
+    <h4>Umsetzung:</h4>
+    <p>
+      Die App wurde mit Ionic entwickelt und kommuniziert über das HTTP-Protokoll mit der RESTful API, die mit ASP.NET
+      und C# erstellt wurde. Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.
+    </p>
+    <p>
+      Mit der Felchen App steht eine benutzerfreundliche Plattform zur Verfügung, die nicht nur die Speicherung von
+      Fängen ermöglicht, sondern auch durch die Integration von Wetterdaten und geplanten Features eine umfassende
+      Erfahrung für Felchen-Fischer bietet.
+    </p>
+  </section>
 </div>
 
 

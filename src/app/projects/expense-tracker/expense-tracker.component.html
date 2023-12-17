@@ -1,108 +1,79 @@
 <div class="container">
-  <h3>Kostenmanager</h3>
-  <p>Mit dieser App lassen sich Ausgaben wie auch Einnahmen bequem Online erfassen und Verwalten.</p>
-  <p>Ein und Ausgaben können in Kategorien unterteilt werden.</p>
-  <p>Alle Ein und Ausgaben können jederzeit bearbeitet oder gelöscht werden. Es kann zudem für jeden Monat oder das ganze Jahr eine
-    Excel Statistik heruntergeladen werden.</p>
-  <hr>
-  <h4>Funktionen:</h4>
-  <div class="screens">
-    <img (click)="open(0)" alt="..."
-         class="img-fluid images"
-         src="../../../assets/images/expenseTracker/Home.png"
-         style="width: 80%">
-    <div class="text">
-      <p>Auf der Startseite wird immer der aktuelle Monat angezeigt.</p>
-      <p>Wurde in den Einstellungen ein Budget gesetzt zeigt der % Balken immer die Ausgaben in % zum Budget an.
-        Wurde in den Einstellungen gewählt das der Kostenmanager mit Einnahmen geführt wird, wird zudem die aktuelle Differenz zwischen Einnahmen und
-        Ausgaben berechnet.</p>
-      <p>Im unteren Teil werden alle Ausgaben pro Kategorie sortiert und der Prozentsatz der Kategorie zu allen aktuellen Ausgaben berechnet
-        und angezeigt.</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img (click)="open(1)" alt="..."
-         class="img-fluid images"
-         src="../../../assets/images/expenseTracker/addExpense.png"
-         style="width: 80%">
-    <div class="text">
-      <p>Mit Klick auf Ausgabe Erfassen lässt sich schnell eine neue Ausgabe eintragen.</p>
-      <p>Bei der Kategorie stehen alle erfassten Kategorien zur Verfügung, oder es kann auch gleich eine neue Kategorie für die Ausgabe erfasst werden.</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img (click)="open(2)" alt="..."
-         class="img-fluid images"
-         src="../../../assets/images/expenseTracker/expenses.png"
-         style="width: 80%">
-    <div class="text">
-      <p>In den Ausgaben sieht man alle Ausgaben für den aktuellen Monat.</p>
-      <p>Alle Ausgaben für jede Kategorie werden aufgelistet mit dem Preis und der Gesamtsumme der Kategorie.</p>
-      <p>Jede Ausgabe kann hier bearbeitet oder auch gelöscht werden.</p>
-      <p>Es kann nach Wunsch auch bis 4 Jahre zurück oder 1 Jahr in die Zukunft gewählt werden, um die Ausgaben anzuschauen oder zu bearbeiten.</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img (click)="open(3)" alt="..."
-         class="img-fluid images"
-         src="../../../assets/images/expenseTracker/categories.png"
-         style="width: 80%">
-    <div class="text">
-      <p>Auf der Kategorien Seite erhält der Benutzer eine Übersicht, über die Erfassten Kategorien für Ein und Ausgaben.</p>
-      <p>Jede Kategorie kann hier bearbeitet oder nach Wunsch auch wieder gelöscht werden.</p>
-      <p>Auf dieser Seite lassen sich auch neue Kategorien erfassen.</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img (click)="open(4)" alt="..."
-         class="img-fluid images"
-         src="../../../assets/images/expenseTracker/statistics.png"
-         style="width: 80%">
-    <div class="text">
-      <p>Auf der Statistik Seite erhält der Benutzer ein Diagramm mit den ganzen Ausgaben für das Aktuelle Jahr.</p>
-      <p>Wird die Applikation mit Einnahmen geführt, wird auch ein Diagramm für die Einnahmen angezeigt, sowie eine Berechnung der Differenz zwischen
-        Ein und Ausgaben.</p>
-      <p>Der Benutzer kann nach Wunsch hier direkt eine Jahresstatistik als Excel herunterladen oder für einen gewünschten Monat eine Detaillierte
-        Monatsstatistik.</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img (click)="open(5)" alt="..."
-         class="img-fluid images"
-         src="../../../assets/images/expenseTracker/excel.png"
-         style="width: 80%">
-    <div class="text">
-      <p>Beispiel einer Detaillierter Monatsstatistik als Excel.</p>
-      <p></p>
-    </div>
-  </div>
-  <div class="screens">
-    <img (click)="open(6)" alt="..."
-         class="img-fluid images"
-         src="../../../assets/images/expenseTracker/settings.png"
-         style="width: 80%">
-    <div class="text">
-      <p>In den Einstellungen kann der Benutzer sein Account verwalten.</p>
-      <p>Es kann hier eingestellt werden, ob die Applikation nur mit Ausgaben geführt werden möchten, was eine Auswirkung auf die Anzeige, wie auch
-        die Excel Statistiken hat. Auch das Monatsbudget kann hier jederzeit geändert werden.</p>
-    </div>
-  </div>
-  <hr>
-  <h4>Verwendete Technologien:</h4>
-  <ul>
-    <li>Angular 13.1.1</li>
-    <li>Bootstrap 5</li>
-    <li>.NET 6</li>
-    <li>MSSQL</li>
-  </ul>
-  <hr>
-  <h4>Umsetzung:</h4>
-  <p>Das Frontend wurde mit Angular programmiert und Bootstrap verwendet für die Darstellung</p>
-  <p>Für das Backend wurde eine RESTFull API mit .NET 6 in C# programmiert. Die REST wurde komplett asynchron
-    programmiert</p>
-  <p>Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.</p>
-  <hr>
-  <h4>Kostenmanager ausprobieren</h4>
+  <h3 class="text-center">Kostenmanager - Behalten Sie Ihre Finanzen im Blick:</h3>
+  <p>
+    Die Kostenmanager-App ermöglicht es Ihnen, Ausgaben und Einnahmen bequem online zu erfassen und zu verwalten. Hier sind einige der Funktionen, die Ihnen die App bietet:
+  </p>
+  <section>
+    <gallery *ngIf="galleryConfig$ | async; let config"
+             [items]="images"
+             [thumbWidth]="config.thumbWidth"
+             [thumbHeight]="config.thumbHeight"
+             [thumbPosition]="config.thumbPosition"
+             [imageSize]="'contain'"
+             [counter]="false"
+             [itemAutosize]="false"
+             [autoHeight]="false"
+             [playerInterval]="5000"
+             [autoPlay]="false"></gallery>
+  </section>
+  <section>
+    <h4>Funktionen:</h4>
+    <ol>
+      <li>Übersichtliche Startseite:</li>
+      <ul>
+        <li>Die Startseite zeigt immer den aktuellen Monat an.</li>
+        <li>Ein % Balken visualisiert die Ausgaben im Verhältnis zum Budget, wenn in den Einstellungen ein Budget gesetzt wurde.</li>
+        <li>Bei Nutzung von Einnahmen wird die Differenz zwischen Einnahmen und Ausgaben berechnet.</li>
+      </ul>
+      <li>Kategoriebasierte Ausgaben:</li>
+      <ul>
+        <li>Alle Ein- und Ausgaben können in Kategorien unterteilt werden.</li>
+        <li>Die App zeigt Ausgaben pro Kategorie, berechnet den Prozentsatz der Kategorie zu den Gesamtausgaben und listet sie übersichtlich auf.</li>
+      </ul>
+      <li>Schnelle Erfassung von Ausgaben:</li>
+      <ul>
+        <li>Mit einem Klick auf "Ausgabe erfassen" können Sie schnell eine neue Ausgabe eingeben.</li>
+        <li>Sie können die Kategorie auswählen oder eine neue Kategorie direkt erfassen.</li>
+      </ul>
+      <li>Ausgabenverwaltung:</li>
+      <ul>
+        <li>Die Ausgabenseite zeigt alle Ausgaben des aktuellen Monats an.</li>
+        <li>Jede Ausgabe kann bearbeitet oder gelöscht werden.</li>
+        <li>Sie haben Zugriff auf Ausgaben bis zu 4 Jahre zurück oder 1 Jahr in die Zukunft.</li>
+      </ul>
+      <li>Kategorienverwaltung:</li>
+      <ul>
+        <li>Auf der Kategorienseite können Sie Ihre erfassten Ein- und Ausgabenkategorien verwalten.</li>
+        <li>Neue Kategorien können hinzugefügt, bearbeitet oder gelöscht werden.</li>
+      </ul>
+      <li>Statistikübersicht:</li>
+      <ul>
+        <li>Die Statistikseite zeigt Diagramme der Ausgaben für das aktuelle Jahr an.</li>
+        <li>Bei Nutzung von Einnahmen gibt es auch ein Diagramm für die Einnahmen und die Differenz zwischen Ein- und Ausgaben.</li>
+        <li>Sie können Jahres- und Monatsstatistiken als Excel herunterladen.</li>
+      </ul>
+      <li>Benutzereinstellungen:</li>
+      <ul>
+        <li>In den Einstellungen kann der Benutzer seinen Account verwalten.</li>
+        <li>Es kann eingestellt werden, ob die Applikation nur mit Ausgaben geführt werden soll.</li>
+        <li>Das Monatsbudget kann hier angepasst werden.</li>
+      </ul>
+    </ol>
+  </section>
+  <section>
+    <h4>Verwendete Technologien:</h4>
+    <ul>
+      <li><b>Frontend:</b> Angular 13.1.1, Bootstrap 5</li>
+      <li><b>Backend:</b> .NET 6 (RESTful API in C#)</li>
+      <li><b>Datenbank:</b> Microsoft SQL</li>
+    </ul>
+    <h4>Umsetzung:</h4>
+    <p>
+      Das Frontend wurde mit Angular und Bootstrap für die Darstellung programmiert. Das Backend wurde als RESTful API mit .NET 6 in C# asynchron entwickelt. Die Daten werden sicher in einer Microsoft SQL-Datenbank gespeichert.
+    </p>
+    <h4>Kostenmanager ausprobieren:</h4>
+    <p>Die Anwendung steht zum Ausprobieren bereit.</p>
+  </section>
   <div class="demoButton">
     <button class="btn btn-success" (click)="onDemoClick()">Zum Kostenmanager</button>
   </div>

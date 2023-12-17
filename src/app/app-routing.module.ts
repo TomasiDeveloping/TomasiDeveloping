@@ -17,6 +17,7 @@ import {FelchenWebappComponent} from './projects/felchen-webapp/felchen-webapp.c
 import {GuineaPigComponent} from './projects/guinea-pig/guinea-pig.component';
 import {ExpenseTrackerComponent} from "./projects/expense-tracker/expense-tracker.component";
 import {SwissWatersComponent} from "./projects/swiss-waters/swiss-waters.component";
+import {DaettwilerPond} from "./projects/daetwiller-pond/daettwiler-pond.component";
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'projects/guineaPig', component: GuineaPigComponent},
   {path: 'projects/expensetracker', component: ExpenseTrackerComponent},
   {path: 'projects/swisswaters', component: SwissWatersComponent},
+  {path: 'projects/daettwilerpond', component: DaettwilerPond},
   {path: 'contact', component: ContactComponent},
   {path: 'impressum', component: ImpressumComponent},
   {path: 'privacy', component: PrivacyComponent},

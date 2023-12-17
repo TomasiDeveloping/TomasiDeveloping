@@ -1,7 +1,16 @@
-.container{
+.container {
   margin-top: 5%;
 }
 
-h3{
+h3 {
   font-family: 'Metal Mania', cursive;
+  color: #f60c65;
+}
+
+h4 {
+  color: #5751a4;
+}
+
+section {
+  margin-top: 20px;
 }

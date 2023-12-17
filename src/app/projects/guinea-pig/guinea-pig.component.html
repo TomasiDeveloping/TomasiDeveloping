@@ -1,81 +1,83 @@
 <div class="container">
-  <h3>Meerschweinchen Gesundheits-Check</h3>
-  <p>Mit dieser kleinen Webapplikation lassen sich Gesundheits-Checks für die Meerschweinchen speichern.</p>
-  <p>Jeder Check wird in der Datenbank gespeichert.</p>
-  <p>Zu jedem Meerschweinchen lassen sich Daten wie Name, Alter, Geschlecht und Rasse speichern.</p>
-  <hr>
-  <h4>Funktionen:</h4>
-  <div class="screens">
-    <img src="../../../assets/images/guineaPig/guinePig1.png" style="width: 40%"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(0)">
-    <div class="text">
-      <p>Die Applikation besteht aus einer Hauptseite, auf der alle Meerschweinchen aus der Datenbank angezeigt werden.</p>
-      <p>Es können weitere Meerschweinchen hinzugefügt werden</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img src="../../../assets/images/guineaPig/guinePig2.png" style="width: 40%"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(1)">
-    <div class="text">
-      <p>Mit dem Button bearbeiten kann jedes Meerschweinchen bearbeiten werden, um vorhandenen Daten anzupassen.</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img src="../../../assets/images/guineaPig/guinePig3.png" style="width: 40%"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(2)">
-    <div class="text">
-      <p>Mit Klick auf Neuer Check kann ein neuer Check für das ausgewählte Meerschweinchen hinzugefügt werden</p>
-      <p>Der Check besteht aus diversen Checkboxen, um auszuwählen was Geprüft wurde. Zu jedem Check kann wen gewünscht auch ein Kommentar hinzugefügt werden</p>
-      <p>Jeder Check hat ein Info Button, um eine kleine Beschreibung zum Check aufzurufen</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img src="../../../assets/images/guineaPig/guinePig4.png" style="width: 40%"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(3)">
-    <div class="text">
-      <p>Wurde der Info Button für ein Check geklickt erhält man eine kleine Beschreibung was bei diesem Test wichtig ist</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img src="../../../assets/images/guineaPig/guinePig5.png" style="width: 40%"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(4)">
-    <div class="text">
-      <p>Mit Klick auf Checks wird dem Benutzer die letzten 10 Checks für das ausgewählte Meerschweinchen angezeigt</p>
-      <p>In der Hauptanzeige sieht man das Datum und das Gewicht</p>
-    </div>
-  </div>
-  <div class="screens">
-    <img src="../../../assets/images/guineaPig/guinePig6.png" style="width: 40%"
-         class="img-fluid images"
-         alt="..."
-         (click)="open(5)">
-    <div class="text">
-      <p>Wurde für ein Check die Detail Ansicht geklickt sieht man den kompletten Check inklusive Kommentare sofern ein Kommentar für den Check hinterlegt wurde</p>
-    </div>
-  </div>
-  <hr>
-  <h4>Verwendete Technologien:</h4>
-  <ul>
-    <li>Angular 13.0.3</li>
-    <li>Bootstrap 5</li>
-    <li>.NET Core 6</li>
-    <li>MSSQL</li>
-  </ul>
-  <hr>
-  <h4>Umsetzung:</h4>
-  <p>Das Frontend wurde mit Angular programmiert und Bootstrap verwendet für die Darstellung</p>
-  <p>Für das Backend wurde eine RESTFull API mit .NET Core 6 in C# programmiert. Die REST wurde komplett asynchron programmiert</p>
-  <p>Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.</p>
+  <h3 class="text-center">Meerschweinchen Gesundheits-Check</h3>
+  <section>
+    <p>
+      Die Meerschweinchen Gesundheits-Check Webapplikation ermöglicht es Benutzern, Gesundheitsinformationen ihrer
+      Meerschweinchen zu verfolgen und zu speichern. Die Anwendung wurde mit Angular für das Frontend und .NET Core in
+      C# für das asynchrone Backend entwickelt. Bootstrap 5 wird verwendet, um eine benutzerfreundliche und ansprechende
+      Benutzeroberfläche zu gewährleisten. Die Daten werden in einer Microsoft SQL-Datenbank gespeichert.
+    </p>
+  </section>
+  <section>
+    <gallery *ngIf="galleryConfig$ | async; let config"
+      [items]="images"
+      [thumbWidth]="config.thumbWidth"
+      [thumbHeight]="config.thumbHeight"
+      [thumbPosition]="config.thumbPosition"
+      [imageSize]="'contain'"
+      [counter]="false"
+      [itemAutosize]="false"
+      [autoHeight]="false"
+      [playerInterval]="5000"
+      [autoPlay]="false"></gallery>
+  </section>
+  <section class="mt-3">
+    <h4>Funktionen:</h4>
+    <ol>
+      <li>Hauptseite:</li>
+      <ul>
+        <li>Alle Meerschweinchen in der Datenbank werden auf der Hauptseite angezeigt.</li>
+        <li>Für jedes Meerschweinchen können Name, Alter, Geschlecht und Rasse gespeichert werden.</li>
+        <li>Die Anzeige enthält Informationen wie das Datum des letzten Checks und das Gewicht.</li>
+      </ul>
+      <li>Meerschweinchen hinzufügen:</li>
+      <ul>
+        <li>Benutzer können neue Meerschweinchen hinzufügen, indem sie relevante Informationen eingeben.</li>
+      </ul>
+      <li>Meerschweinchen bearbeiten:</li>
+      <ul>
+        <li>Der "Bearbeiten"-Button ermöglicht es Benutzern, vorhandene Informationen zu aktualisieren.</li>
+      </ul>
+      <li>Neuer Check:</li>
+      <ul>
+        <li>Mit einem Klick auf "Neuer Check" können Benutzer einen Gesundheits-Check für das ausgewählte
+          Meerschweinchen hinzufügen.
+        </li>
+        <li>Der Check umfasst verschiedene Checkboxen für zu prüfende Aspekte, und es kann ein Kommentar hinzugefügt
+          werden.
+        </li>
+      </ul>
+      <li>Info Button für Checks:</li>
+      <ul>
+        <li>Jeder Check verfügt über einen "Info"-Button, der eine kurze Beschreibung des durchgeführten Tests
+          liefert.
+        </li>
+      </ul>
+      <li>Check-Historie:</li>
+      <ul>
+        <li>Die Anwendung zeigt die letzten 10 Checks für das ausgewählte Meerschweinchen an.</li>
+        <li>Benutzer können das Datum und das Gewicht der Checks in der Hauptansicht sehen.</li>
+      </ul>
+      <li>Detailansicht für Checks:</li>
+      <ul>
+        <li>Durch Klicken auf einen spezifischen Check können Benutzer alle Details einschließlich Kommentaren anzeigen,
+          sofern vorhanden.
+        </li>
+      </ul>
+    </ol>
+  </section>
+  <section>
+    <h4>Verwendete Technologien:</h4>
+    <ul>
+      <li><b>Frontend:</b> Angular, Bootstrap 5</li>
+      <li><b>Backend:</b> .NET Core (C#), RESTful API (asynchron)</li>
+      <li><b>Datenbank:</b> Microsoft SQL</li>
+    </ul>
+  </section>
+  <section>
+    <p>Die Meerschweinchen Gesundheits-Check Webapplikation bietet eine benutzerfreundliche Oberfläche zur effektiven
+      Verfolgung und Pflege der Gesundheit von Meerschweinchen.</p>
+  </section>
 </div>
 
 

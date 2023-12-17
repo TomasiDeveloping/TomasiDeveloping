@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Lightbox} from 'ngx-lightbox';
+import {Component, OnInit} from '@angular/core';
+import {GalleryConfig, GalleryItem, ImageItem} from "ng-gallery";
+import {map, Observable} from "rxjs";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-felchen-webapp',
@@ -8,47 +10,51 @@ import {Lightbox} from 'ngx-lightbox';
 })
 export class FelchenWebappComponent implements OnInit {
 
-  private albums: Array<any> = [];
+  images: GalleryItem[];
+  galleryConfig$: Observable<GalleryConfig>;
 
-  constructor(private lightbox: Lightbox) { }
-
-  ngOnInit(): void {
-    this.albums.push(
-      {src: './assets/images/felchenWebApp/login.jpg',
-        caption: 'Login',
-        thumb: './assets/images/felchenWebApp/login.jpg'
-      },
-      {src: './assets/images/felchenWebApp/home.jpg',
-        caption: 'Home',
-        thumb: './assets/images/felchenWebApp/home.jpg'
-      },
-      {src: './assets/images/felchenWebApp/catchDetail.jpg',
-        caption: 'Fang Detail',
-        thumb: './assets/images/felchenWebApp/catchDetail.jpg'
-      },
-      {src: './assets/images/felchenWebApp/editCatch.jpg',
-        caption: 'Fang bearbeiten',
-        thumb: './assets/images/felchenWebApp/editCatch.jpg'
-      },
-      {src: './assets/images/felchenWebApp/weather.jpg',
-        caption: 'Wetter',
-        thumb: './assets/images/felchenWebApp/weather.jpg'
-      },
-      {src: './assets/images/felchenWebApp/forecast.jpg',
-        caption: '7 Tage Prognosse',
-        thumb: './assets/images/felchenWebApp/forecast.jpg'
-      }
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.galleryConfig$ = this.breakpointObserver.observe([
+      Breakpoints.HandsetPortrait
+    ]).pipe(
+      map(res => {
+        if (res.matches) {
+          return {
+            thumbPosition: 'top',
+            thumbWidth: 80,
+            thumbHeight: 80
+          };
+        }
+        return {
+          thumbPosition: 'left',
+          thumbWidth: 120,
+          thumbHeight: 90
+        };
+      })
     );
   }
 
-  open(index: number): void {
-    // open lightbox
-    this.lightbox.open(this.albums, index);
-  }
-
-  close(): void {
-    // close lightbox programmatically
-    this.lightbox.close();
+  ngOnInit(): void {
+    this.images = [
+      new ImageItem({
+        src: './assets/images/felchenWebApp/catchDetail.jpg', thumb: './assets/images/felchenWebApp/catchDetail.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/felchenWebApp/editCatch.jpg', thumb: './assets/images/felchenWebApp/editCatch.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/felchenWebApp/forecast.jpg', thumb: './assets/images/felchenWebApp/forecast.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/felchenWebApp/home.jpg', thumb: './assets/images/felchenWebApp/home.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/felchenWebApp/login.jpg', thumb: './assets/images/felchenWebApp/login.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/felchenWebApp/weather.jpg', thumb: './assets/images/felchenWebApp/weather.jpg'
+      })
+    ];
   }
 
   onProject(): void {

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Lightbox} from 'ngx-lightbox';
+import {Component, OnInit} from '@angular/core';
+import {GalleryConfig, GalleryItem, ImageItem} from "ng-gallery";
+import {map, Observable} from "rxjs";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-fishing-lizenz-manager',
@@ -8,72 +10,75 @@ import {Lightbox} from 'ngx-lightbox';
 })
 export class FishingLizenzManagerComponent implements OnInit {
 
-  private albums: Array<any> = [];
+  images: GalleryItem[];
+  galleryConfig$: Observable<GalleryConfig>;
 
-  constructor(private lightbox: Lightbox) { }
-
-  ngOnInit(): void {
-    this.albums.push(
-      {src: './assets/images/lizenzManager/schonzeit.PNG',
-        caption: 'Schonzeit',
-        thumb: './assets/images/lizenzManager/schonzeit.PNG'
-      },
-      {src: './assets/images/lizenzManager/regel.PNG',
-        caption: 'Regeln',
-        thumb: './assets/images/lizenzManager/regel.PNG'
-      },
-      {src: './assets/images/lizenzManager/adminstat.PNG',
-        caption: 'Statistik Administrator',
-        thumb: './assets/images/lizenzManager/adminstat.PNG'
-      },
-      {src: './assets/images/lizenzManager/jahres.PNG',
-        caption: 'Jahres Statistik generieren',
-        thumb: './assets/images/lizenzManager/jahres.PNG'
-      },
-      {src: './assets/images/lizenzManager/karte.PNG',
-        caption: 'Lizenz bearbeiten',
-        thumb: './assets/images/lizenzManager/karte.PNG'
-      },
-      {src: './assets/images/lizenzManager/user.PNG',
-        caption: 'User bearbeiten',
-        thumb: './assets/images/lizenzManager/user.PNG'
-      },
-      {src: './assets/images/lizenzManager/useraufseher.PNG',
-        caption: 'Aufseher User',
-        thumb: './assets/images/lizenzManager/useraufseher.PNG'
-      },
-      {src: './assets/images/lizenzManager/aufseherst.PNG',
-        caption: 'Aufseher User Statistik',
-        thumb: './assets/images/lizenzManager/augseherst.PNG'
-      },
-      {src: './assets/images/lizenzManager/userStat.PNG',
-        caption: 'User Statistik',
-        thumb: './assets/images/lizenzManager/userStat.PNG'
-      },
-      {src: './assets/images/lizenzManager/neu.PNG',
-        caption: 'Neuer Eintrag',
-        thumb: './assets/images/lizenzManager/neu.PNG'
-      },
-      {src: './assets/images/lizenzManager/liz.PNG',
-        caption: 'Eigene Lizenzen',
-        thumb: './assets/images/lizenzManager/liz.PNG'
-      },
-      {src: './assets/images/lizenzManager/home.PNG',
-        caption: 'Startseite',
-        thumb: './assets/images/lizenzManager/home.PNG'
-      }
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.galleryConfig$ = this.breakpointObserver.observe([
+      Breakpoints.HandsetPortrait
+    ]).pipe(
+      map(res => {
+        if (res.matches) {
+          return {
+            thumbPosition: 'top',
+            thumbWidth: 80,
+            thumbHeight: 80
+          };
+        }
+        return {
+          thumbPosition: 'left',
+          thumbWidth: 120,
+          thumbHeight: 90
+        };
+      })
     );
   }
 
-  open(index: number): void {
-    // open lightbox
-    this.lightbox.open(this.albums, index);
+  ngOnInit(): void {
+    this.images = [
+      new ImageItem({
+        src: './assets/images/lizenzManager/adminstatPNG.jpg', thumb: './assets/images/lizenzManager/adminstatPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/aufseherstPNG.jpg', thumb: './assets/images/lizenzManager/aufseherstPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/homePNG.jpg', thumb: './assets/images/lizenzManager/homePNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/jahresPNG.jpg', thumb: './assets/images/lizenzManager/jahresPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/kartePNG.jpg', thumb: './assets/images/lizenzManager/kartePNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/KontaktPNG.jpg', thumb: './assets/images/lizenzManager/KontaktPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/lizPNG.jpg', thumb: './assets/images/lizenzManager/lizPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/neuPNG.jpg', thumb: './assets/images/lizenzManager/neuPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/regelPNG.jpg', thumb: './assets/images/lizenzManager/regelPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/schonzeitPNG.jpg', thumb: './assets/images/lizenzManager/schonzeitPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/useraufseherPNG.jpg',
+        thumb: './assets/images/lizenzManager/useraufseherPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/userPNG.jpg', thumb: './assets/images/lizenzManager/userPNG.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/lizenzManager/userStatPNG.jpg', thumb: './assets/images/lizenzManager/userStatPNG.jpg'
+      })
+    ];
   }
 
-  close(): void {
-    // close lightbox programmatically
-    this.lightbox.close();
-  }
 
   onDemoClick(): void {
     window.open('https://fischerlizenzmanager.tomasi-developing.ch/home', '_blank');

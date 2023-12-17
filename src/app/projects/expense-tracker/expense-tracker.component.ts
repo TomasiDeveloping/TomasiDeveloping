@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Lightbox} from "ngx-lightbox";
+import {Component, OnInit} from '@angular/core';
+import {GalleryConfig, GalleryItem, ImageItem} from "ng-gallery";
+import {map, Observable} from "rxjs";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-expense-tracker',
@@ -8,51 +10,54 @@ import {Lightbox} from "ngx-lightbox";
 })
 export class ExpenseTrackerComponent implements OnInit {
 
-  private albums: Array<any> = [];
+  images: GalleryItem[];
+  galleryConfig$: Observable<GalleryConfig>;
 
-  constructor(private lightbox: Lightbox) { }
-
-  ngOnInit(): void {
-    this.albums.push(
-      {src: './assets/images/expenseTracker/Home.png',
-        caption: 'Startseite',
-        thumb: './assets/images/expenseTracker/Home.png'
-      },
-      {src: './assets/images/expenseTracker/addExpense.png',
-        caption: 'Ausgabe hinzufügen',
-        thumb: './assets/images/expenseTracker/addExpense.png'
-      },
-      {src: './assets/images/expenseTracker/expenses.png',
-        caption: 'Ausgaben übersicht',
-        thumb: './assets/images/expenseTracker/expenses.png'
-      },
-      {src: './assets/images/expenseTracker/categories.png',
-        caption: 'Kategorien',
-        thumb: './assets/images/expenseTracker/categories.png'
-      },
-      {src: './assets/images/expenseTracker/statistics.png',
-        caption: 'Statistik',
-        thumb: './assets/images/expenseTracker/statistics.png'
-      },
-      {src: './assets/images/expenseTracker/excel.png',
-        caption: 'Monats Excel',
-        thumb: './assets/images/expenseTracker/excel.png'
-      },
-      {src: './assets/images/expenseTracker/settings.png',
-        caption: 'Einstellungen',
-        thumb: './assets/images/expenseTracker/settings.png'
-      }
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.galleryConfig$ = this.breakpointObserver.observe([
+      Breakpoints.HandsetPortrait
+    ]).pipe(
+      map(res => {
+        if (res.matches) {
+          return {
+            thumbPosition: 'top',
+            thumbWidth: 80,
+            thumbHeight: 80
+          };
+        }
+        return {
+          thumbPosition: 'left',
+          thumbWidth: 120,
+          thumbHeight: 90
+        };
+      })
     );
   }
 
-  open(index: number): void {
-    // open lightbox
-    this.lightbox.open(this.albums, index);
-  }
-
-  close(): void {
-    // close lightbox programmatically
-    this.lightbox.close();
+  ngOnInit(): void {
+    this.images = [
+      new ImageItem({
+        src: './assets/images/expenseTracker/addExpense.jpg', thumb: './assets/images/expenseTracker/addExpense.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/expenseTracker/categories.jpg', thumb: './assets/images/expenseTracker/categories.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/expenseTracker/excel.jpg', thumb: './assets/images/expenseTracker/excel.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/expenseTracker/expenses.jpg', thumb: './assets/images/expenseTracker/expenses.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/expenseTracker/home.jpg', thumb: './assets/images/expenseTracker/home.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/expenseTracker/settings.jpg', thumb: './assets/images/expenseTracker/settings.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/expenseTracker/statistics.jpg', thumb: './assets/images/expenseTracker/statistics.jpg'
+      })
+    ];
   }
 
   onDemoClick() {

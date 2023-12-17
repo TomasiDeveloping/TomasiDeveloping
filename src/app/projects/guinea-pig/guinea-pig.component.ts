@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Lightbox} from 'ngx-lightbox';
+import {Component, OnInit} from '@angular/core';
+import {GalleryItem, GalleryConfig, ImageItem} from 'ng-gallery';
+import {map, Observable} from "rxjs";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
 
 @Component({
   selector: 'app-guinea-pig',
@@ -8,47 +10,52 @@ import {Lightbox} from 'ngx-lightbox';
 })
 export class GuineaPigComponent implements OnInit {
 
-  private albums: Array<any> = [];
+  images: GalleryItem[];
+  galleryConfig$: Observable<GalleryConfig>;
 
-  constructor(private lightbox: Lightbox) { }
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.galleryConfig$ = this.breakpointObserver.observe([
+      Breakpoints.HandsetPortrait
+    ]).pipe(
+      map(res => {
+        if (res.matches) {
+          return {
+            thumbPosition: 'top',
+            thumbWidth: 80,
+            thumbHeight: 80
+          };
+        }
+        return {
+          thumbPosition: 'left',
+          thumbWidth: 120,
+          thumbHeight: 90
+        };
+      })
+    );
+
+  }
 
   ngOnInit(): void {
-    this.albums.push(
-      {src: './assets/images/guineaPig/guinePig1.png',
-        caption: 'Startseite',
-        thumb: './assets/images/guineaPig/guineaPig1.png'
-      },
-      {src: './assets/images/guineaPig/guinePig2.png',
-        caption: 'Meerschweinchen bearbeiten',
-        thumb: './assets/images/guineaPig/guinePig2.png'
-      },
-      {src: './assets/images/guineaPig/guinePig3.png',
-        caption: 'Gesundheits - Check hinzufügen',
-        thumb: './assets/images/guineaPig/guinePig3.png'
-      },
-      {src: './assets/images/guineaPig/guinePig4.png',
-        caption: 'Infoboxen',
-        thumb: './assets/images/guineaPig/guinePig4.png'
-      },
-      {src: './assets/images/guineaPig/guinePig5.png',
-        caption: 'Letzten 10 Checks ansehen',
-        thumb: './assets/images/guineaPig/guinePig5.png'
-      },
-      {src: './assets/images/guineaPig/guinePig6.png',
-        caption: 'Details zum Check',
-        thumb: './assets/images/guineaPig/guinePig6.png'
-      }
-    );
-  }
-
-  open(index: number): void {
-    // open lightbox
-    this.lightbox.open(this.albums, index);
-  }
-
-  close(): void {
-    // close lightbox programmatically
-    this.lightbox.close();
+    this.images = [
+      new ImageItem({
+        src: './assets/images/guineaPig/guineaPig1.jpg', thumb: './assets/images/guineaPig/guineaPig1.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/guineaPig/guineaPig2.jpg', thumb: './assets/images/guineaPig/guineaPig2.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/guineaPig/guineaPig3.jpg', thumb: './assets/images/guineaPig/guineaPig3.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/guineaPig/guineaPig4.jpg', thumb: './assets/images/guineaPig/guineaPig4.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/guineaPig/guineaPig5.jpg', thumb: './assets/images/guineaPig/guineaPig5.jpg'
+      }),
+      new ImageItem({
+        src: './assets/images/guineaPig/guineaPig6.jpg', thumb: './assets/images/guineaPig/guineaPig6.jpg'
+      })
+    ];
   }
 
 }
